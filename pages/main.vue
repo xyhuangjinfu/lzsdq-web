@@ -17,7 +17,7 @@
                 >{{ kn.title }}{{ kn.id }}</router-link
               >
             </h5>
-            <h7 class="knowledge_summary">{{ kn.summary }}></h7>
+            <h7 class="knowledge_summary">{{ kn.content }}></h7>
           </div>
         </div>
         <div id="knowledge_nav" class="pagination">
@@ -43,7 +43,7 @@
   padding: 8px 16px;
   text-decoration: none;
 }
-#knowledge_nav{
+#knowledge_nav {
   float: right;
 }
 #container {
@@ -164,6 +164,12 @@ export default {
         },
       ],
     };
+  },
+  async fetch() {
+    let x = await $axios.get(
+      "http://www.lzsdq.cn:9999/api/knowledges/?page_size=100&page_num=1"
+    );
+    return { knowledges: x };
   },
 };
 </script>

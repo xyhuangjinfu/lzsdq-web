@@ -3,12 +3,7 @@
     {{ $route.params.id }}
     详情页面
 
-    <p>
-      人的耳朵是一直在生长的。根据英国科学家的研究表明，人从生下来到死去，外耳确实是一直在生长的，只是生长得比较慢而已。\n10岁以前，人的外耳生长是非常迅速的，但是到了10岁后，外耳的生长速度就开始放慢了，每年大约只长长0.22毫米。
-    </p>
-    <p>
-      更让人意想不到的是，人的耳垂也是一直在生长的，而且男人的耳垂比女人的耳垂长得更长。那么等我的耳朵一直长的话，等我老了，会不会碰到地面呢？答案是不会的，步入老年之后，耳朵生长的速度会非常缓慢，这是因为耳朵是由骨骼和耳道构成的，甚至还会逐渐退化。
-    </p>
+    <p>{{ knowledge.content }}</p>
   </div>
 </template>
 
@@ -17,3 +12,18 @@ p {
   text-indent: 2em;
 }
 </style>
+
+<script>
+export default {
+  data() {
+    return {
+      knowledge: {},
+    };
+  },
+  async fetch() {
+    this.knowledge = await fetch(
+      "http://www.lzsdq.cn:9999/api/knowledges/" + this.$route.params.id
+    ).then((res) => res.json());
+  },
+};
+</script>

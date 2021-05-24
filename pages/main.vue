@@ -14,10 +14,10 @@
                 class="knowledge_title"
                 v-bind:to="'/k/' + kn.id"
                 target="_blank"
-                >{{ kn.title }}{{ kn.id }}</router-link
+                >{{ kn.title }}</router-link
               >
             </h5>
-            <h7 class="knowledge_summary">{{ kn.content }}></h7>
+            <h7 class="knowledge_summary">{{ kn.content }}</h7>
           </div>
         </div>
         <div id="knowledge_nav" class="pagination">
@@ -107,12 +107,12 @@
 export default {
   data() {
     return {
-      knowledges: [{ id: 1, title: "qq", content: "ert" }],
+      knowledges: [],
     };
   },
   async fetch() {
     this.knowledges = await fetch(
-      "http://www.lzsdq.cn:9999/api/knowledges/?page_size=1&page_num=3"
+      "http://www.lzsdq.cn:9999/api/knowledges/?page_size=100&page_num=1"
     ).then((res) => res.json());
   },
 };

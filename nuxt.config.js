@@ -19,7 +19,7 @@ export default {
 
   server: {
     port: 80, // default: 3000
-    host: '106.14.140.35', // default: localhost,
+    host: '::', // default: localhost,
     timing: false
   },
 

@@ -1,32 +1,42 @@
 <template>
   <div id="container">
-    <div id="header">
-      <a href="/main">
+    <!-- <div id="header"> -->
+    <!-- <a href="/main">
         <img src="~/assets/logo.png" style="width: 225px; height: 60px"
-      /></a>
-      <!-- <img src="~/assets/logo.png" style="width:100px; height:80px"/> -->
-    </div>
+      /></a> -->
+    <!-- <img src="~/assets/logo.png" style="width:100px; height:80px"/> -->
+    <!-- </div> -->
 
-    <h4>{{ article.title }}</h4>
-    <br />
-    <br />
-    <p
-      class="paragraph"
-      v-for="paragraph in article.paragraphs"
-      v-bind:key="paragraph.id"
-    >
-      {{ paragraph.content }}
-    </p>
+    <div id="article">
+      <h3>{{ article.title }}</h3>
+      <br />
+      <br />
+      <p
+        class="paragraph"
+        v-for="paragraph in article.paragraphs"
+        v-bind:key="paragraph.id"
+      >
+        {{ paragraph.content }}
+      </p>
+    </div>
   </div>
 </template>
 
 <style>
-#header {
+#container {
+  width: 50%;
+  margin: 0 auto;
+}
+#article {
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+/* #header {
   padding-top: 15px;
   padding-bottom: 15px;
   padding-left: 18%;
   padding-right: 18%;
-}
+} */
 p.paragraph {
   text-indent: 2em;
 }

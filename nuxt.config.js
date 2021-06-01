@@ -18,8 +18,8 @@ export default {
   target: 'server',
 
   server: {
-    port: 80, // default: 3000
-    host: '::', // default: localhost,
+    port: 3000, // default: 3000
+    host: 'localhost', // default: localhost,
     timing: false
   },
 

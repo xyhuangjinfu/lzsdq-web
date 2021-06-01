@@ -1,23 +1,28 @@
 <template>
-  <div id="container">
-    <div id="article_list">
-      <div
-        class="article_item"
-        v-for="article in articles"
-        v-bind:key="article.id"
-      >
-        <h4>
-          <router-link
-            class="article_title"
-            v-bind:to="'/a/' + article.id"
-            target="_blank"
-            >{{ article.title }}</router-link
-          >
-        </h4>
-        <p class="article_summary">{{ article.summary }}</p>
-        <p class="article_create_time">{{ format_date(article.createTime) }}</p>
+  <div id="page">
+    <div id="container">
+      <div id="article_list">
+        <div
+          class="article_item"
+          v-for="article in articles"
+          v-bind:key="article.id"
+        >
+          <h4>
+            <router-link
+              class="article_title"
+              v-bind:to="'/a/' + article.id"
+              target="_blank"
+              >{{ article.title }}</router-link
+            >
+          </h4>
+          <p class="article_summary">{{ article.summary }}</p>
+          <p class="article_create_time">
+            {{ format_date(article.createTime) }}
+          </p>
+        </div>
       </div>
     </div>
+    <Footer />
   </div>
 </template>
 

@@ -1,30 +1,34 @@
 <template>
-  <div id="container">
-    <!-- <div id="header"> -->
-    <!-- <a href="/main">
+  <div id="page">
+    <div id="container">
+      <!-- <div id="header"> -->
+      <!-- <a href="/main">
         <img src="~/assets/logo.png" style="width: 225px; height: 60px"
       /></a> -->
-    <!-- <img src="~/assets/logo.png" style="width:100px; height:80px"/> -->
-    <!-- </div> -->
+      <!-- <img src="~/assets/logo.png" style="width:100px; height:80px"/> -->
+      <!-- </div> -->
 
-    <div id="article">
-      <h3>{{ article.title }}</h3>
-      <br />
-      <br />
-      <p
-        class="paragraph"
-        v-for="paragraph in article.paragraphs"
-        v-bind:key="paragraph.id"
-      >
-        {{ paragraph.content }}
-      </p>
+      <div id="article">
+        <h3>{{ article.title }}</h3>
+        <br />
+        <br />
+        <p
+          class="paragraph"
+          v-for="paragraph in article.paragraphs"
+          v-bind:key="paragraph.id"
+        >
+          {{ paragraph.content }}
+        </p>
+      </div>
     </div>
+    <Footer />
   </div>
 </template>
 
 <style>
 #container {
   width: 50%;
+  min-height: 100%;
   margin: 0 auto;
 }
 #article {

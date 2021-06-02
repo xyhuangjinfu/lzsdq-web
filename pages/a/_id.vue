@@ -38,10 +38,12 @@
 #footer {
   position: absolute;
   bottom: 0;
+  margin-top: 300px;
 }
 #article {
   padding-top: 100px;
   padding-bottom: 100px;
+  background-color: coral;
 }
 /* #header {
   padding-top: 15px;

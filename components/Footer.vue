@@ -1,6 +1,7 @@
 <template>
   <div id="footer">
-    <p id="copyright">Copyright © 2021. All Rights Reserved.</p>
+    <p id="copyright">Copyright © 2021. All Rights Reserved. 版权声明
+本站信息均是网上搜集，如有侵犯您的版权，请及时联系我们，我们将尽快处理。 联系方式 QQ 630569027</p>
   </div>
 </template>
 

@@ -1,6 +1,6 @@
 <template>
   <div id="page">
-    <div id="container">
+    <div id="content">
       <div id="article_list">
         <div
           class="article_item"
@@ -22,19 +22,31 @@
         </div>
       </div>
     </div>
-    <Footer />
+    <Footer id="footer" />
   </div>
 </template>
 
 <style>
-#container {
+#page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: bisque;
+}
+#content {
   width: 50%;
+  min-height: 100%;
   margin: 0 auto;
+  flex: 1;
 }
 #article_list {
-  margin-top: 100px;
-  margin-bottom: 100px;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  background-color: coral;
 }
+/* #footer {
+  flex: auto;
+} */
 .article_title {
   color: #000000;
 }

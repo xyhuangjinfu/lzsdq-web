@@ -7,7 +7,7 @@
 <style>
 #footer {
   width: 100%;
-  height: 100px;
+  height: 5em;
   background-color: rgb(70, 70, 70);
 }
 #copyright {
@@ -15,6 +15,6 @@
   color: rgb(170, 170, 170);
   margin: 0 auto;
   position: relative;
-  top: 40%;
+  top: 35%;
 }
 </style>

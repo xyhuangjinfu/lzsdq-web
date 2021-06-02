@@ -1,6 +1,6 @@
 <template>
   <div id="page">
-    <div id="container">
+    <div id="content">
       <!-- <div id="header"> -->
       <!-- <a href="/main">
         <img src="~/assets/logo.png" style="width: 225px; height: 60px"
@@ -21,19 +21,27 @@
         </p>
       </div>
     </div>
-    <Footer />
+    <Footer id="footer" />
   </div>
 </template>
 
 <style>
-#container {
+#page {
+  position: relative;
+  min-height: 100vh;
+}
+#content {
   width: 50%;
   min-height: 100%;
   margin: 0 auto;
 }
+#footer {
+  position: absolute;
+  bottom: 0;
+}
 #article {
-  margin-top: 100px;
-  margin-bottom: 100px;
+  padding-top: 100px;
+  padding-bottom: 100px;
 }
 /* #header {
   padding-top: 15px;

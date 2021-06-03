@@ -1,5 +1,6 @@
 <template>
   <div id="page">
+    <Header id="header"/>
     <div id="content">
       <div id="article_list">
         <div

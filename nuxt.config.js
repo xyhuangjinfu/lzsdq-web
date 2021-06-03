@@ -1,14 +1,14 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: '精选文章',
+    title: '趣味历史',
     htmlAttrs: {
       lang: 'zh'
     },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' }
+      { hid: 'description', name: 'description', content: '趣味历史' }
     ],
     link: [
       { rel: 'icon', type: 'image/png', href: '/book.png' }

@@ -28,7 +28,7 @@
   width: 100%;
   height: 2em;
   /* background-color: rgb(13, 71, 161); */
-  background-color: rgb(21, 101, 192);
+  background-color: rgb(25, 118, 210);
   color: white;
   font-size: 1.4em;
   padding-left: 25%;
@@ -52,11 +52,11 @@ a.menu:visited {
 a.menu:hover {
   color: white;
   text-decoration: none;
-  background-color: rgb(13, 71, 161);
+  background-color: rgb(21, 101, 192);;
 }
 a.menu:active {
   color: white;
   text-decoration: none;
-  background-color: rgb(13, 71, 161);
+  background-color: rgb(21, 101, 192);;
 }
 </style>

@@ -28,7 +28,7 @@
               <img
                 style="vertical-align: middle"
                 class="article_create_time_icon"
-                src="../assets/time.png"
+                src="../../assets/time.png"
                 width="25px"
                 height="25px"
               />
@@ -39,7 +39,7 @@
               <img
                 style="vertical-align: middle"
                 class="article_read_count_icon"
-                src="../assets/eye.png"
+                src="../../assets/eye.png"
                 width="20px"
                 height="20px"
               />
@@ -51,7 +51,8 @@
         </div>
       </div>
       <div class="pagination">
-        <a href="/p/2">下一页</a>
+        <a  v-bind:href="'/p/' + pre_page($route.params.page)">上一页</a>
+        <a  v-bind:href="'/p/' + next_page($route.params.page)">下一页</a>
       </div>
     </div>
     <Footer id="footer" />
@@ -154,6 +155,12 @@ export default {
         newd.getSeconds();
       return s;
     },
+    next_page(page_num) {
+      return parseInt(page_num) + 1;
+    },
+    pre_page(page_num) {
+      return parseInt(page_num) - 1;
+    }
   },
   data() {
     return {
@@ -161,8 +168,12 @@ export default {
     };
   },
   async fetch() {
+    var page_num = this.$route.params.page;
+    var url = "http://www.lzsdq.cn:9999/api/articles/?page_size=5&page_num=" + page_num;
+    console.log();
+    console.log(url);
     this.articles = await fetch(
-      "http://www.lzsdq.cn:9999/api/articles/?page_size=5&page_num=1"
+      url
     ).then((res) => res.json());
   },
 };

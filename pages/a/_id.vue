@@ -44,7 +44,6 @@
 #article {
   padding-top: 100px;
   padding-bottom: 100px;
-  background-color: coral;
 }
 /* #header {
   padding-top: 15px;

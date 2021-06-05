@@ -55,6 +55,7 @@
       </div>
     </div>
     <Footer id="footer" />
+    <!-- <Mountain /> -->
   </div>
 </template>
 
@@ -70,7 +71,6 @@
   min-height: 100%;
   margin: 0 auto;
   flex: 2;
-  
 }
 #article_list {
   padding-top: 0;
@@ -120,7 +120,7 @@
   display: inline-block;
   margin-top: 20px;
   margin-bottom: 20px;
-  float:right;
+  float: right;
 }
 .pagination a {
   color: rgb(13, 71, 161);
@@ -132,9 +132,44 @@
 </style>
 
 <script>
+// export default {
+// methods: {
+//   format_date(d) {
+//     var newd = new Date(d);
+//     var mo = newd.getMonth() + 1;
+//     if (mo < 10) {
+//       mo = "0" + mo;
+//     }
+//     var s =
+//       newd.getFullYear() +
+//       "-" +
+//       mo +
+//       "-" +
+//       newd.getDate() +
+//       " " +
+//       newd.getHours() +
+//       ":" +
+//       newd.getMinutes() +
+//       ":" +
+//       newd.getSeconds();
+//     return s;
+//   },
+// },
+// data() {
+//   return {
+//     articles: [],
+//   };
+// },
+// async fetch() {
+//   this.articles = await fetch(
+//     "http://www.lzsdq.cn:9999/api/articles/?page_size=5&page_num=1"
+//   ).then((res) => res.json());
+// },
+// };
+import axios from "axios";
 export default {
   methods: {
-    format_date(d) {
+    format_date: function (d) {
       var newd = new Date(d);
       var mo = newd.getMonth() + 1;
       if (mo < 10) {
@@ -155,15 +190,66 @@ export default {
       return s;
     },
   },
+
+  // resp: {
+  //   totalPage: 0,
+  //   page: 0,
+  //   articles: [{ title: "aaa", readRecord: { readcount: 111 } }],
+  // },
+
   data() {
     return {
-      articles: [],
+      articles: [{ title: "bb", readRecord: { readcount: 22 } }],
     };
   },
   async fetch() {
-    this.articles = await fetch(
-      "http://www.lzsdq.cn:9999/api/articles/?page_size=5&page_num=1"
-    ).then((res) => res.json());
+    this.articles = await axios
+      .get("http://www.lzsdq.cn:9999/api/articles/?page_size=5&page_num=1")
+      .then((resp) => {
+        // resp.data.data;
+        // console.log(resp.data.data)
+        return resp.data.data;
+      });
   },
+
+  // data() {
+  //   return {
+  //     page: {
+  //       totalPage: 0,
+  //       page: 0,
+  //       articles: [{ title: "bb", readRecord: { readcount: 22 } }],
+  //     },
+  //   };
+  // },
+  // async fetch() {
+  //   this.page = await axios
+  //     .get("http://www.lzsdq.cn:9999/api/articles/?page_size=5&page_num=1")
+  //     .then((resp) => {
+  //       var bizResp = resp.data;
+  //       return {
+  //         page: {
+  //           totalPage: bizResp.totalPage,
+  //           page: bizResp.page,
+  //           articles: bizResp.data,
+  //         },
+  //       };
+  //       // resp.data
+  //     });
+  // },
+  // fetch: function () {
+  //   console.log("ffffff");
+  //   var that = this;
+  //   this.$axios
+  //     .get("http://www.lzsdq.cn:9999/api/articles/?page_size=5&page_num=1")
+  //     .then(
+  //       function (resp) {
+  //         console.log(resp);
+  //         that.articles = resp.data;
+  //         that.page = resp.page;
+  //         that.totalPage = resp.totalPage;
+  //       },
+  //       function (err) {}
+  //     );
+  // },
 };
 </script>

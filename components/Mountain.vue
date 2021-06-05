@@ -31,8 +31,7 @@ export default {
   },
   async fetch() {
     // this.mountains = await this.$axios.get('https://api.nuxtjs.dev/mountains');
-    this.mountains = await axios.get('http://www.lzsdq.cn:9999/api/articles/hot').then(resp=>resp.data);
-    console.log("ffff");
+    this.mountains = await axios.get('http://www.lzsdq.cn:9999/api/articles/hot').then(resp=> {return resp.data});
   }
   // activated() {
   //   if (this.$fetchState.timestamp <= Date.now() - 30000) {

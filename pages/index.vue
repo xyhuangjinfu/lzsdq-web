@@ -33,7 +33,7 @@
                 height="25px"
               />
               <span class="article_create_time">
-                {{ format_date(article.createTime) }}
+                {{ getCreateTime(article.createTime) }}
               </span>
               <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
               <img
@@ -131,72 +131,45 @@
 }
 </style>
 
+
 <script>
-// export default {
-// methods: {
-//   format_date(d) {
-//     var newd = new Date(d);
-//     var mo = newd.getMonth() + 1;
-//     if (mo < 10) {
-//       mo = "0" + mo;
-//     }
-//     var s =
-//       newd.getFullYear() +
-//       "-" +
-//       mo +
-//       "-" +
-//       newd.getDate() +
-//       " " +
-//       newd.getHours() +
-//       ":" +
-//       newd.getMinutes() +
-//       ":" +
-//       newd.getSeconds();
-//     return s;
-//   },
-// },
-// data() {
-//   return {
-//     articles: [],
-//   };
-// },
-// async fetch() {
-//   this.articles = await fetch(
-//     "http://www.lzsdq.cn:9999/api/articles/?page_size=5&page_num=1"
-//   ).then((res) => res.json());
-// },
-// };
+import utils from "../js/utils.js"
+
 import axios from "axios";
 export default {
+  // methods: {
+  //   format_date: function (d) {
+  //     var newd = new Date(d);
+  //     var mo = newd.getMonth() + 1;
+  //     if (mo < 10) {
+  //       mo = "0" + mo;
+  //     }
+  //     var s =
+  //       newd.getFullYear() +
+  //       "-" +
+  //       mo +
+  //       "-" +
+  //       newd.getDate() +
+  //       " " +
+  //       newd.getHours() +
+  //       ":" +
+  //       newd.getMinutes() +
+  //       ":" +
+  //       newd.getSeconds();
+  //     return s;
+  //   },
+  // },
   methods: {
-    format_date: function (d) {
-      var newd = new Date(d);
-      var mo = newd.getMonth() + 1;
-      if (mo < 10) {
-        mo = "0" + mo;
-      }
-      var s =
-        newd.getFullYear() +
-        "-" +
-        mo +
-        "-" +
-        newd.getDate() +
-        " " +
-        newd.getHours() +
-        ":" +
-        newd.getMinutes() +
-        ":" +
-        newd.getSeconds();
-      return s;
+    getCreateTime: function (d) {
+      return utils.format_date(d);
+      // return d;
     },
   },
-
   // resp: {
   //   totalPage: 0,
   //   page: 0,
   //   articles: [{ title: "aaa", readRecord: { readcount: 111 } }],
   // },
-
   data() {
     return {
       articles: [{ title: "bb", readRecord: { readcount: 22 } }],
@@ -211,45 +184,5 @@ export default {
         return resp.data.data;
       });
   },
-
-  // data() {
-  //   return {
-  //     page: {
-  //       totalPage: 0,
-  //       page: 0,
-  //       articles: [{ title: "bb", readRecord: { readcount: 22 } }],
-  //     },
-  //   };
-  // },
-  // async fetch() {
-  //   this.page = await axios
-  //     .get("http://www.lzsdq.cn:9999/api/articles/?page_size=5&page_num=1")
-  //     .then((resp) => {
-  //       var bizResp = resp.data;
-  //       return {
-  //         page: {
-  //           totalPage: bizResp.totalPage,
-  //           page: bizResp.page,
-  //           articles: bizResp.data,
-  //         },
-  //       };
-  //       // resp.data
-  //     });
-  // },
-  // fetch: function () {
-  //   console.log("ffffff");
-  //   var that = this;
-  //   this.$axios
-  //     .get("http://www.lzsdq.cn:9999/api/articles/?page_size=5&page_num=1")
-  //     .then(
-  //       function (resp) {
-  //         console.log(resp);
-  //         that.articles = resp.data;
-  //         that.page = resp.page;
-  //         that.totalPage = resp.totalPage;
-  //       },
-  //       function (err) {}
-  //     );
-  // },
 };
 </script>

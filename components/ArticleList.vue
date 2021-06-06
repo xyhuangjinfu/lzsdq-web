@@ -9,7 +9,11 @@
         <div>
           <img
             class="article_cover"
-            src="../assets/img_null.png"
+            :src="
+              article.coverUrl == null
+                ? require('../assets/img_null.png')
+                : article.coverUrl
+            "
           />
         </div>
         <div class="article_info">

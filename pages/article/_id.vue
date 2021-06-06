@@ -1,58 +1,32 @@
 <template>
-  <div id="page">
-    <Header id="header"/>
+  <div id="page_container">
+    <Header />
     <div id="content">
-      <!-- <div id="header"> -->
-      <!-- <a href="/main">
-        <img src="~/assets/logo.png" style="width: 225px; height: 60px"
-      /></a> -->
-      <!-- <img src="~/assets/logo.png" style="width:100px; height:80px"/> -->
-      <!-- </div> -->
-
-      <div id="article">
-        <h3>{{ article.title }}</h3>
-        <br />
-        <br />
-        <p
-          class="paragraph"
-          v-for="paragraph in article.paragraphs"
-          v-bind:key="paragraph.id"
-        >
-          {{ paragraph.content }}
-        </p>
-      </div>
+      <Article id="article_container" :pageData="pageData" />
+      <Hot />
     </div>
-    <Footer id="footer" />
+    <Footer />
   </div>
 </template>
 
 <style>
-#page {
-  position: relative;
+#page_container {
   min-height: 100vh;
+  background-color: rgb(247, 247, 247);
+  display: flex;
+  flex-flow: column nowrap;
 }
 #content {
-  width: 50%;
-  min-height: 100%;
+  width: 65%;
   margin: 0 auto;
+  flex-grow: 1;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: flex-start;
 }
-#footer {
-  position: absolute;
-  bottom: 0;
-  margin-top: 300px;
-}
-#article {
-  padding-top: 100px;
-  padding-bottom: 100px;
-}
-/* #header {
-  padding-top: 15px;
-  padding-bottom: 15px;
-  padding-left: 18%;
-  padding-right: 18%;
-} */
-p.paragraph {
-  text-indent: 2em;
+#article_container {
+  margin: 0 auto;
+  flex-grow: 1;
 }
 </style>
 

@@ -41,6 +41,7 @@
               width="20px"
               height="20px"
             />
+            <span>&nbsp;</span>
             <span class="article_read_count">
               {{ article.readRecord.readCount }}
             </span>
@@ -72,14 +73,48 @@
   margin-top: 0;
 }
 .article_item {
-  background-color: white;
   margin-top: 20px;
+  background-color: white;
   border-radius: 5px;
   padding: 20px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  display: flex;
+  flex-flow: row nowrap;
+}
+.article_cover {
+  width: 200px;
+  height: 150px;
+  border-radius: 5px;
+}
+.article_info {
+  height: 150px;
+  margin-left: 20px;
+  flex-grow: 1;
+  /* background-color: aquamarine; */
+
+  position: relative;
+}
+.article_title {
+  color: black;
+}
+.article_title:hover {
+  color: rgb(13, 71, 161);
 }
 .article_summary {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
   color: rgb(181, 181, 181);
+  margin-top: 20px;
+}
+.article_meta {
+  color: rgb(181, 181, 181);
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
 }
 #pagination {
   margin-top: 20px;

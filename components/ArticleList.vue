@@ -50,12 +50,8 @@
       </div>
     </div>
     <div id="pagination">
-      <a :href="'/p/' + (pageData.page - 1)" v-show="pageData.page > 1"
-        >上一页</a
-      >
-      <a
-        :href="'/p/' + (pageData.page + 1)"
-        v-show="pageData.page < pageData.totalPage"
+      <a :href="pageData.preUrl" v-show="pageData.page > 1">上一页</a>
+      <a :href="pageData.nextUrl" v-show="pageData.page < pageData.totalPage"
         >下一页</a
       >
     </div>
@@ -148,30 +144,33 @@ import utils from "../js/utils.js";
 import axios from "axios";
 
 export default {
+  props: ["pageData"],
   methods: {
     getCreateTime: function (d) {
       return utils.format_date(d);
     },
   },
-  data() {
-    return {
-      pageData: {
-        page: 0,
-        totalPage: 0,
-        articles: [{ title: "bb", readRecord: { readcount: 22 } }],
-      },
-    };
-  },
-  async fetch() {
-    this.pageData = await axios
-      .get("http://www.lzsdq.cn:9999/api/articles/?page_size=5&page_num=1")
-      .then((resp) => {
-        return {
-          page: resp.data.page,
-          totalPage: resp.data.totalPage,
-          articles: resp.data.data,
-        };
-      });
-  },
+  // data() {
+  //   return {
+  //     pageData: {
+  //       page: 0,
+  //       totalPage: 0,
+  //       articles: [],
+  //       preUrl:"#",
+  //       nextUrl:"#",
+  //     },
+  //   };
+  // },
+  // async fetch() {
+  //   this.pageData = await axios
+  //     .get("http://www.lzsdq.cn:9999/api/articles/?page_size=5&page_num=1")
+  //     .then((resp) => {
+  //       return {
+  //         page: resp.data.page,
+  //         totalPage: resp.data.totalPage,
+  //         articles: resp.data.data,
+  //       };
+  //     });
+  // },
 };
 </script>

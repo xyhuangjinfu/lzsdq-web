@@ -1,6 +1,8 @@
 <template>
   <div id="page_container">
-    <ArticleList :pageData="pageData"/>
+    <Header />
+    <ArticleList id="article_list_container" :pageData="pageData"/>
+    <Footer />
   </div>
 </template>
 
@@ -8,6 +10,9 @@
 #page_container {
   min-height: 100vh;
   background-color: rgb(247, 247, 247);
+}
+#article_list_container {
+  margin: 0 auto;
 }
 </style>
 
@@ -29,7 +34,7 @@ export default {
   },
   async fetch() {
     this.pageData = await axios
-      .get("http://www.lzsdq.cn:9999/api/articles/?page_size=5&page_num=1")
+      .get("http://www.lzsdq.cn:9999/api/articles/?page_size=13&page_num=1")
       .then((resp) => {
         return {
           page: resp.data.page,

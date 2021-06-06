@@ -1,180 +1,50 @@
 <template>
-  <div id="page">
-    <Header id="header" />
-    <div id="content">
-      <div id="article_list">
-        <div
-          class="article_item"
-          v-for="article in articles"
-          v-bind:key="article.id"
-        >
-          <div>
-            <img
-              class="article_cover"
-              src="https://picsum.photos/id/296/200/133"
-            />
-          </div>
-          <div class="article_info">
-            <h4>
-              <router-link
-                class="article_title"
-                v-bind:to="'/a/' + article.id"
-                target="_blank"
-                >{{ article.title }}</router-link
-              >
-            </h4>
-            <p class="article_summary">{{ article.summary }}</p>
-            <div class="article_meta">
-              <img
-                style="vertical-align: middle"
-                class="article_create_time_icon"
-                src="../../assets/time.png"
-                width="25px"
-                height="25px"
-              />
-              <span class="article_create_time">
-                {{ format_date(article.createTime) }}
-              </span>
-              <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-              <img
-                style="vertical-align: middle"
-                class="article_read_count_icon"
-                src="../../assets/eye.png"
-                width="20px"
-                height="20px"
-              />
-              <span class="article_read_count">
-                {{ article.readRecord.readCount }}
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="pagination">
-        <a  v-bind:href="'/p/' + pre_page($route.params.page)">上一页</a>
-        <a  v-bind:href="'/p/' + next_page($route.params.page)">下一页</a>
-      </div>
-    </div>
-    <Footer id="footer" />
+  <div id="page_container">
+    <Header />
+    <ArticleList id="article_list_container" :pageData="pageData"/>
+    <Footer />
   </div>
 </template>
 
 <style>
-#page {
-  display: flex;
-  flex-direction: column;
+#page_container {
   min-height: 100vh;
-  background-color: white;
+  background-color: rgb(247, 247, 247);
 }
-#content {
-  width: 50%;
-  min-height: 100%;
+#article_list_container {
   margin: 0 auto;
-  flex: 2;
-  
-}
-#article_list {
-  padding-top: 0;
-  padding-bottom: 0;
-}
-
-.article_cover {
-  width: 200px;
-  height: 150px;
-  margin-right: 20px;
-}
-.article_info {
-  position: relative;
-}
-.article_title {
-  color: #000000;
-}
-.article_item {
-  display: flex;
-  flex-direction: row;
-  position: relative;
-  margin-top: 20px;
-  height: auto;
-  background-color: white;
-  padding: 20px;
-  border-style: solid;
-  border-width: 1px;
-  border-color: rgb(238, 238, 238);
-}
-.article_summary {
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
-  overflow: hidden;
-  color: rgb(181, 181, 181);
-  margin-top: 20px;
-}
-.article_meta {
-  position: absolute;
-  bottom: 0;
-  margin-bottom: 0;
-  color: rgb(181, 181, 181);
-  font-size: 0.8em;
-  vertical-align: middle;
-}
-.pagination {
-  display: inline-block;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  float:right;
-}
-.pagination a {
-  color: rgb(13, 71, 161);
-  float: left;
-  padding: 8px 16px;
-  text-decoration: none;
-  font-weight: bold;
 }
 </style>
 
+
 <script>
+import axios from "axios";
+
 export default {
-  methods: {
-    format_date(d) {
-      var newd = new Date(d);
-      var mo = newd.getMonth() + 1;
-      if (mo < 10) {
-        mo = "0" + mo;
-      }
-      var s =
-        newd.getFullYear() +
-        "-" +
-        mo +
-        "-" +
-        newd.getDate() +
-        " " +
-        newd.getHours() +
-        ":" +
-        newd.getMinutes() +
-        ":" +
-        newd.getSeconds();
-      return s;
-    },
-    next_page(page_num) {
-      return parseInt(page_num) + 1;
-    },
-    pre_page(page_num) {
-      return parseInt(page_num) - 1;
-    }
-  },
   data() {
     return {
-      articles: [],
+      pageData: {
+        page: 0,
+        totalPage: 0,
+        articles: [],
+        preUrl:"#",
+        nextUrl:"#",
+      },
     };
   },
   async fetch() {
-    var page_num = this.$route.params.page;
-    var url = "http://www.lzsdq.cn:9999/api/articles/?page_size=5&page_num=" + page_num;
-    console.log();
-    console.log(url);
-    this.articles = await fetch(
-      url
-    ).then((res) => res.json());
+    var pageNum = this.$route.params.page;
+    this.pageData = await axios
+      .get("http://www.lzsdq.cn:9999/api/articles/?page_size=13&page_num=" + pageNum)
+      .then((resp) => {
+        return {
+          page: resp.data.page,
+          totalPage: resp.data.totalPage,
+          articles: resp.data.data,
+          preUrl:"/p/" + (parseInt(pageNum) - 1),
+          nextUrl:"/p/" + (parseInt(pageNum) + 1),
+        };
+      });
   },
 };
 </script>

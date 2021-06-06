@@ -2,7 +2,7 @@
   <div id="page_container">
     <Header />
     <div id="content">
-      <Article id="article_container" :pageData="pageData" />
+      <Article id="article_container" />
       <Hot />
     </div>
     <Footer />
@@ -32,6 +32,18 @@
 
 <script>
 export default {
+  head() {
+    return {
+      title: this.article.title,
+      meta: [
+        {
+          hid: "description",
+          name: "description",
+          content: "Home page description",
+        },
+      ],
+    };
+  },
   data() {
     return {
       article: {},

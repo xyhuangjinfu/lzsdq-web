@@ -51,24 +51,35 @@
 
 <script>
 import utils from "../js/utils.js";
+import axios from "axios";
 
 export default {
   methods: {
     getCreateTime: function (d) {
       return utils.format_date(d);
     },
+    getAndSetHot: async function () {
+      this.articles = await axios
+        .get("http://www.lzsdq.cn:9999/api/articles/hot?limit=10")
+        .then((res) => {
+          return res.data;
+        });
+    },
   },
   data() {
     return {
+      refreshTimer: "",
       articles: [],
     };
   },
   async fetch() {
-    this.articles = await fetch(
-      "http://www.lzsdq.cn:9999/api/articles/hot?limit=10"
-    ).then((res) => {
-      return res.json();
-    });
+    await this.getAndSetHot();
+  },
+  mounted() {
+    this.refreshTimer = setInterval(this.getAndSetHot, 1000 * 60);
+  },
+  beforeDestroy() {
+    clearInterval(this.refreshTimer);
   },
 };
 </script>

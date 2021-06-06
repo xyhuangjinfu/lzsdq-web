@@ -1,7 +1,10 @@
 <template>
   <div id="page_container">
     <Header />
-    <ArticleList id="article_list_container" :pageData="pageData" />
+    <div id="content">
+      <ArticleList id="article_list_container" :pageData="pageData" />
+      <Hot />
+    </div>
     <Footer />
   </div>
 </template>
@@ -12,6 +15,14 @@
   background-color: rgb(247, 247, 247);
   display: flex;
   flex-flow: column nowrap;
+}
+#content {
+  width: 65%;
+  margin: 0 auto;
+  flex-grow: 1;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: flex-start;
 }
 #article_list_container {
   margin: 0 auto;

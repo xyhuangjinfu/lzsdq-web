@@ -1,53 +1,60 @@
 <template>
   <div id="hot_container">
-    <div>热门推荐 {{ mytitle }}</div>
-    <div id="hot_article_list">
-      <div
-        class="hot_article_item"
-        v-for="article in articles"
-        v-bind:key="article.id"
-      >
-        <router-link
-          class="article_title"
-          v-bind:to="'/a/' + article.id"
-          target="_blank"
-          >{{ article.title }}</router-link
+    <div id="hot_content">
+      <div id="hot_label">热门推荐</div>
+      <div id="hot_article_list">
+        <div
+          class="hot_article_item"
+          v-for="article in articles"
+          v-bind:key="article.id"
         >
+          <router-link
+            class="article_title"
+            v-bind:to="'/a/' + article.id"
+            target="_blank"
+            >{{ article.title }}</router-link
+          >
+        </div>
       </div>
     </div>
   </div>
 </template>
 
-<style>
-#hot_container{
-  width: 20%;
-  background-color: rgb(227, 242, 253);
+<style scoped>
+#hot_container {
+  width: 400px;
+  padding: 20px;
+  background-color: #00000000;
+}
+#hot_content {
+  background-color: white;
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+#hot_label{
+  color: rgb(13, 71, 161);
+  font-size: 1.3em;
+  font-weight: bold;
+}
+.hot_article_item{
+  margin-top: 10px;
+}
+.article_title {
+  color: black;
+}
+.article_title:hover {
+  color: rgb(13, 71, 161);
 }
 </style>
 
 <script>
+import utils from "../js/utils.js";
+
 export default {
-  props: ["mytitle"],
   methods: {
-    format_date(d) {
-      var newd = new Date(d);
-      var mo = newd.getMonth() + 1;
-      if (mo < 10) {
-        mo = "0" + mo;
-      }
-      var s =
-        newd.getFullYear() +
-        "-" +
-        mo +
-        "-" +
-        newd.getDate() +
-        " " +
-        newd.getHours() +
-        ":" +
-        newd.getMinutes() +
-        ":" +
-        newd.getSeconds();
-      return s;
+    getCreateTime: function (d) {
+      return utils.format_date(d);
     },
   },
   data() {
@@ -57,8 +64,10 @@ export default {
   },
   async fetch() {
     this.articles = await fetch(
-      "http://www.lzsdq.cn:9999/api/articles/hot?limit=5"
-    ).then((res) => res.json());
+      "http://www.lzsdq.cn:9999/api/articles/hot?limit=10"
+    ).then((res) => {
+      return res.json();
+    });
   },
 };
 </script>

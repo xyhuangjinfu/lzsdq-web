@@ -58,7 +58,7 @@
   </div>
 </template>
 
-<style>
+<style scoped>
 #article_list_container {
   width: 50%;
   background-color: #00000000;

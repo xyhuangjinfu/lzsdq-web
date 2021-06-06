@@ -3,7 +3,7 @@
     <div id="article_list">
       <div
         class="article_item"
-        v-for="article in articles"
+        v-for="article in pageData.articles"
         v-bind:key="article.id"
       >
         <div>
@@ -49,8 +49,14 @@
       </div>
     </div>
     <div id="pagination">
-      <a href="/p/1">上一页</a>
-      <a href="/p/2">下一页</a>
+      <a :href="'/p/' + (pageData.page - 1)" v-show="pageData.page > 1"
+        >上一页</a
+      >
+      <a
+        :href="'/p/' + (pageData.page + 1)"
+        v-show="pageData.page < pageData.totalPage"
+        >下一页</a
+      >
     </div>
   </div>
 </template>
@@ -114,14 +120,22 @@ export default {
   },
   data() {
     return {
-      articles: [{ title: "bb", readRecord: { readcount: 22 } }],
+      pageData: {
+        page: 0,
+        totalPage: 0,
+        articles: [{ title: "bb", readRecord: { readcount: 22 } }],
+      },
     };
   },
   async fetch() {
-    this.articles = await axios
+    this.pageData = await axios
       .get("http://www.lzsdq.cn:9999/api/articles/?page_size=5&page_num=1")
       .then((resp) => {
-        return resp.data.data;
+        return {
+          page: resp.data.page,
+          totalPage: resp.data.totalPage,
+          articles: resp.data.data,
+        };
       });
   },
 };

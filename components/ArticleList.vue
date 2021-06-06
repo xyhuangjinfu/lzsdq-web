@@ -9,7 +9,7 @@
         <div>
           <img
             class="article_cover"
-            src="https://picsum.photos/id/296/200/133"
+            src="../assets/img_null.png"
           />
         </div>
         <div class="article_info">

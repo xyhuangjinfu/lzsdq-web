@@ -5,9 +5,9 @@
     </div>
     <div id="menu_container">
       <a href="/" class="menu" target="_blank">首页</a>
-      <a href="/" class="menu" target="_blank">生活</a>
+      <!-- <a href="/" class="menu" target="_blank">生活</a>
       <a href="/" class="menu" target="_blank">历史</a>
-      <a href="/" class="menu" target="_blank">科技</a>
+      <a href="/" class="menu" target="_blank">科技</a> -->
     </div>
   </div>
 </template>

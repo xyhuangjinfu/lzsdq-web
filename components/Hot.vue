@@ -10,7 +10,7 @@
         >
           <router-link
             class="article_title"
-            v-bind:to="'/a/' + article.id"
+            v-bind:to="'/article/' + article.id"
             target="_blank"
             >{{ article.title }}</router-link
           >

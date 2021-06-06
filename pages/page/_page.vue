@@ -58,8 +58,8 @@ export default {
           page: resp.data.page,
           totalPage: resp.data.totalPage,
           articles: resp.data.data,
-          preUrl: "/p/" + (parseInt(pageNum) - 1),
-          nextUrl: "/p/" + (parseInt(pageNum) + 1),
+          preUrl: "/page/" + (parseInt(pageNum) - 1),
+          nextUrl: "/page/" + (parseInt(pageNum) + 1),
         };
       });
   },

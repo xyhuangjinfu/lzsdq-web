@@ -1,202 +1,117 @@
 <template>
-  <div id="page">
-    <Header id="header" />
-    <div id="content">
-      <div id="article_list">
-        <div
-          class="article_item"
-          v-for="article in articles"
-          v-bind:key="article.id"
-        >
-          <div>
+  <div id="article_list_container">
+    <div id="article_list">
+      <div
+        class="article_item"
+        v-for="article in articles"
+        v-bind:key="article.id"
+      >
+        <div>
+          <img
+            class="article_cover"
+            src="https://picsum.photos/id/296/200/133"
+          />
+        </div>
+        <div class="article_info">
+          <h4>
+            <router-link
+              class="article_title"
+              v-bind:to="'/a/' + article.id"
+              target="_blank"
+              >{{ article.title }}</router-link
+            >
+          </h4>
+          <p class="article_summary">{{ article.summary }}</p>
+          <div class="article_meta">
             <img
-              class="article_cover"
-              src="https://picsum.photos/id/296/200/133"
+              style="vertical-align: middle"
+              class="article_create_time_icon"
+              src="../assets/time.png"
+              width="25px"
+              height="25px"
             />
-          </div>
-          <div class="article_info">
-            <h4>
-              <router-link
-                class="article_title"
-                v-bind:to="'/a/' + article.id"
-                target="_blank"
-                >{{ article.title }}</router-link
-              >
-            </h4>
-            <p class="article_summary">{{ article.summary }}</p>
-            <div class="article_meta">
-              <img
-                style="vertical-align: middle"
-                class="article_create_time_icon"
-                src="../assets/time.png"
-                width="25px"
-                height="25px"
-              />
-              <span class="article_create_time">
-                {{ format_date(article.createTime) }}
-              </span>
-              <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-              <img
-                style="vertical-align: middle"
-                class="article_read_count_icon"
-                src="../assets/eye.png"
-                width="20px"
-                height="20px"
-              />
-              <span class="article_read_count">
-                {{ article.readRecord.readCount }}
-              </span>
-            </div>
+            <span class="article_create_time">
+              {{ getCreateTime(article.createTime) }}
+            </span>
+            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            <img
+              style="vertical-align: middle"
+              class="article_read_count_icon"
+              src="../assets/eye.png"
+              width="20px"
+              height="20px"
+            />
+            <span class="article_read_count">
+              {{ article.readRecord.readCount }}
+            </span>
           </div>
         </div>
       </div>
-      <div class="pagination">
-        <a href="/p/2">下一页</a>
-      </div>
     </div>
-    <Footer id="footer" />
-    <!-- <Mountain /> -->
+    <div id="pagination">
+      <a href="/p/1">上一页</a>
+      <a href="/p/2">下一页</a>
+    </div>
   </div>
 </template>
 
 <style>
-#page {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  background-color: white;
-}
-#content {
+#article_list_container {
   width: 50%;
-  min-height: 100%;
-  margin: 0 auto;
-  flex: 2;
+  background-color: #00000000;
+  padding: 20px;
+  overflow: hidden;
 }
-#article_list {
-  padding-top: 0;
-  padding-bottom: 0;
-}
-
-.article_cover {
-  width: 200px;
-  height: 150px;
-  margin-right: 20px;
-}
-.article_info {
-  position: relative;
-}
-.article_title {
-  color: #000000;
+.article_item:first-child {
+  margin-top: 0;
 }
 .article_item {
-  display: flex;
-  flex-direction: row;
-  position: relative;
-  margin-top: 20px;
-  height: auto;
   background-color: white;
+  margin-top: 20px;
+  border-radius: 5px;
   padding: 20px;
-  border-style: solid;
-  border-width: 1px;
-  border-color: rgb(238, 238, 238);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .article_summary {
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
-  overflow: hidden;
   color: rgb(181, 181, 181);
-  margin-top: 20px;
 }
-.article_meta {
-  position: absolute;
-  bottom: 0;
-  margin-bottom: 0;
-  color: rgb(181, 181, 181);
-  font-size: 0.8em;
-  vertical-align: middle;
-}
-.pagination {
-  display: inline-block;
+#pagination {
   margin-top: 20px;
-  margin-bottom: 20px;
   float: right;
 }
-.pagination a {
+#pagination a {
   color: rgb(13, 71, 161);
-  float: left;
+  background-color: white;
+  margin-top: 20px;
   padding: 8px 16px;
-  text-decoration: none;
   font-weight: bold;
+  text-decoration: none;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+#pagination a:hover {
+  color: white;
+  background-color: rgb(13, 71, 161);
+  margin-top: 20px;
+  padding: 8px 16px;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 </style>
 
+
 <script>
-// export default {
-// methods: {
-//   format_date(d) {
-//     var newd = new Date(d);
-//     var mo = newd.getMonth() + 1;
-//     if (mo < 10) {
-//       mo = "0" + mo;
-//     }
-//     var s =
-//       newd.getFullYear() +
-//       "-" +
-//       mo +
-//       "-" +
-//       newd.getDate() +
-//       " " +
-//       newd.getHours() +
-//       ":" +
-//       newd.getMinutes() +
-//       ":" +
-//       newd.getSeconds();
-//     return s;
-//   },
-// },
-// data() {
-//   return {
-//     articles: [],
-//   };
-// },
-// async fetch() {
-//   this.articles = await fetch(
-//     "http://www.lzsdq.cn:9999/api/articles/?page_size=5&page_num=1"
-//   ).then((res) => res.json());
-// },
-// };
+import utils from "../js/utils.js";
 import axios from "axios";
+
 export default {
   methods: {
-    format_date: function (d) {
-      var newd = new Date(d);
-      var mo = newd.getMonth() + 1;
-      if (mo < 10) {
-        mo = "0" + mo;
-      }
-      var s =
-        newd.getFullYear() +
-        "-" +
-        mo +
-        "-" +
-        newd.getDate() +
-        " " +
-        newd.getHours() +
-        ":" +
-        newd.getMinutes() +
-        ":" +
-        newd.getSeconds();
-      return s;
+    getCreateTime: function (d) {
+      return utils.format_date(d);
     },
   },
-
-  // resp: {
-  //   totalPage: 0,
-  //   page: 0,
-  //   articles: [{ title: "aaa", readRecord: { readcount: 111 } }],
-  // },
-
   data() {
     return {
       articles: [{ title: "bb", readRecord: { readcount: 22 } }],
@@ -206,50 +121,8 @@ export default {
     this.articles = await axios
       .get("http://www.lzsdq.cn:9999/api/articles/?page_size=5&page_num=1")
       .then((resp) => {
-        // resp.data.data;
-        // console.log(resp.data.data)
         return resp.data.data;
       });
   },
-
-  // data() {
-  //   return {
-  //     page: {
-  //       totalPage: 0,
-  //       page: 0,
-  //       articles: [{ title: "bb", readRecord: { readcount: 22 } }],
-  //     },
-  //   };
-  // },
-  // async fetch() {
-  //   this.page = await axios
-  //     .get("http://www.lzsdq.cn:9999/api/articles/?page_size=5&page_num=1")
-  //     .then((resp) => {
-  //       var bizResp = resp.data;
-  //       return {
-  //         page: {
-  //           totalPage: bizResp.totalPage,
-  //           page: bizResp.page,
-  //           articles: bizResp.data,
-  //         },
-  //       };
-  //       // resp.data
-  //     });
-  // },
-  // fetch: function () {
-  //   console.log("ffffff");
-  //   var that = this;
-  //   this.$axios
-  //     .get("http://www.lzsdq.cn:9999/api/articles/?page_size=5&page_num=1")
-  //     .then(
-  //       function (resp) {
-  //         console.log(resp);
-  //         that.articles = resp.data;
-  //         that.page = resp.page;
-  //         that.totalPage = resp.totalPage;
-  //       },
-  //       function (err) {}
-  //     );
-  // },
 };
 </script>

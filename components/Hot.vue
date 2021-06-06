@@ -23,6 +23,7 @@
 <style scoped>
 #hot_container {
   width: 400px;
+  min-width: 300px;
   padding: 20px;
   background-color: #00000000;
 }
@@ -30,14 +31,14 @@
   background-color: white;
   border-radius: 5px;
   padding: 20px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0 4px 8px 0 rgb(220, 220, 220);
 }
-#hot_label{
+#hot_label {
   color: rgb(13, 71, 161);
   font-size: 1.3em;
   font-weight: bold;
 }
-.hot_article_item{
+.hot_article_item {
   margin-top: 10px;
 }
 .article_title {

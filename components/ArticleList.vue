@@ -13,14 +13,12 @@
           />
         </div>
         <div class="article_info">
-          <h4>
-            <router-link
-              class="article_title"
-              v-bind:to="'/a/' + article.id"
-              target="_blank"
-              >{{ article.title }}</router-link
-            >
-          </h4>
+          <router-link
+            class="article_title"
+            v-bind:to="'/a/' + article.id"
+            target="_blank"
+            >{{ article.title }}</router-link
+          >
           <p class="article_summary">{{ article.summary }}</p>
           <div class="article_meta">
             <img
@@ -61,6 +59,7 @@
 <style scoped>
 #article_list_container {
   width: 50%;
+  min-width: 700px;
   background-color: #00000000;
   padding: 20px;
   overflow: hidden;
@@ -73,9 +72,10 @@
   background-color: white;
   border-radius: 5px;
   padding: 20px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
   display: flex;
   flex-flow: row nowrap;
+  box-shadow: 0 4px 8px 0 rgb(220, 220, 220);
 }
 .article_cover {
   width: 200px;
@@ -91,9 +91,13 @@
   position: relative;
 }
 .article_title {
+  font-size: 1.3em;
+  font-weight: bold;
   color: black;
 }
 .article_title:hover {
+  font-size: 1.3em;
+  font-weight: bold;
   color: rgb(13, 71, 161);
 }
 .article_summary {
@@ -124,7 +128,7 @@
   font-weight: bold;
   text-decoration: none;
   border-radius: 5px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0 4px 8px 0 rgb(220, 220, 220);
 }
 #pagination a:hover {
   color: white;
@@ -134,7 +138,7 @@
   font-weight: bold;
   text-decoration: none;
   border-radius: 5px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0 4px 8px 0 rgb(220, 220, 220);
 }
 </style>
 

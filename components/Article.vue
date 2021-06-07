@@ -54,7 +54,8 @@ export default {
       if (paragraphCount <= 2) {
         return 0;
       } else {
-        return Math.round(Math.random() * (paragraphCount - 2));
+        // return Math.round(Math.random() * (paragraphCount - 2));
+        return 1;
       }
     },
   },

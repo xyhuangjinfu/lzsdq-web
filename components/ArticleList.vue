@@ -11,7 +11,7 @@
             class="article_cover"
             :src="
               article.coverUrl == null
-                ? require('../assets/img_null.png')
+                ? require('~/assets/img/qwls2.png')
                 : article.coverUrl
             "
           />
@@ -28,7 +28,7 @@
             <img
               style="vertical-align: middle"
               class="article_create_time_icon"
-              src="../assets/time.png"
+              src="~/assets/img/time.png"
               width="25px"
               height="25px"
             />
@@ -39,7 +39,7 @@
             <img
               style="vertical-align: middle"
               class="article_read_count_icon"
-              src="../assets/eye.png"
+              src="~/assets/img/eye.png"
               width="20px"
               height="20px"
             />

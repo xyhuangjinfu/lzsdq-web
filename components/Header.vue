@@ -3,7 +3,7 @@
     <div id="search_container">
       <div id="search_content">
         <div>
-          <a href="/"><img src="../assets/qwls.png" id="logo" /></a>
+          <a href="/"><img src="~/assets/img/qwls1.png" id="logo" /></a>
         </div>
       </div>
     </div>

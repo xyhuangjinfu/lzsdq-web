@@ -4,10 +4,15 @@
       <div id="article_title">{{ article.title }}</div>
       <p
         class="paragraph"
-        v-for="paragraph in article.paragraphs"
+        v-for="(paragraph, index) in article.paragraphs"
         v-bind:key="paragraph.id"
       >
         {{ paragraph.content }}
+        <img
+          class="illustration"
+          :src="article.coverUrl"
+          v-if="index == illustrationPosition && article.coverUrl !== null"
+        />
       </p>
     </div>
   </div>
@@ -36,12 +41,26 @@
 .paragraph {
   text-indent: 2em;
 }
+.illustration {
+  width: 100%;
+}
 </style>
 
 <script>
 export default {
+  methods: {
+    getIllustrationPosition: function (paragraphCount) {
+      //不在最后一个段落
+      if (paragraphCount <= 2) {
+        return 0;
+      } else {
+        return Math.round(Math.random() * (paragraphCount - 2));
+      }
+    },
+  },
   data() {
     return {
+      illustrationPosition: 0,
       article: {},
     };
   },
@@ -51,6 +70,9 @@ export default {
     ).then((res) => {
       return res.json();
     });
+    this.illustrationPosition = this.getIllustrationPosition(
+      this.article.paragraphs.length
+    );
   },
 };
 </script>

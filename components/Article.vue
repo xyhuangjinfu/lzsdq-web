@@ -2,6 +2,30 @@
   <div id="article_container">
     <div id="article_content">
       <div id="article_title">{{ article.title }}</div>
+      <div class="article_meta">
+        <img
+          style="vertical-align: middle"
+          class="article_create_time_icon"
+          src="~/assets/img/time.png"
+          width="25px"
+          height="25px"
+        />
+        <span class="article_create_time">
+          {{ getCreateTime(article.createTime) }}
+        </span>
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+        <img
+          style="vertical-align: middle"
+          class="article_read_count_icon"
+          src="~/assets/img/eye.png"
+          width="20px"
+          height="20px"
+        />
+        <span>&nbsp;</span>
+        <span class="article_read_count">
+          {{ article.readRecord.readCount }}
+        </span>
+      </div>
       <p
         class="paragraph"
         v-for="(paragraph, index) in article.paragraphs"
@@ -33,10 +57,16 @@
   box-shadow: 0 4px 8px 0 rgb(220, 220, 220);
 }
 #article_title {
-  font-size: 2em;
+  font-size: 1.8em;
   font-weight: bold;
   color: black;
-  margin-bottom: 40px;
+}
+.article_meta {
+  color: rgb(181, 181, 181);
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  margin-bottom: 50px;
 }
 .paragraph {
   text-indent: 2em;
@@ -47,8 +77,13 @@
 </style>
 
 <script>
+import utils from "../js/utils.js";
+
 export default {
   methods: {
+    getCreateTime: function (d) {
+      return utils.format_date(d);
+    },
     getIllustrationPosition: function (paragraphCount) {
       //不在最后一个段落
       if (paragraphCount <= 2) {

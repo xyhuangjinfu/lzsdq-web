@@ -1,44 +1,54 @@
 <template>
   <div id="header">
-    <div id="search">
-      <div><a href="/"><img src="../assets/qwls.png" /></a></div>
+    <div id="search_container">
+      <div id="search_content">
+        <div>
+          <a href="/"><img src="../assets/qwls.png" id="logo" /></a>
+        </div>
+      </div>
     </div>
     <div id="menu_container">
-      <a href="/" class="menu" target="_blank">首页</a>
-      <!-- <a href="/" class="menu" target="_blank">生活</a>
-      <a href="/" class="menu" target="_blank">历史</a>
-      <a href="/" class="menu" target="_blank">科技</a> -->
+      <div id="menu_content">
+        <a href="/" class="menu" target="_blank">首页</a>
+      </div>
     </div>
   </div>
 </template>
 
-<style>
-#search {
+<style scoped>
+#search_container {
   width: 100%;
   height: 2em;
   background-color: rgb(227, 242, 253);
   font-size: 3em;
   font-weight: bold;
-    padding-left: 25%;
-  padding-right: 25%;
+}
+#search_content {
+  width: 60%;
+  margin: 0 auto;
+}
+#logo {
+  height: 50px;
 }
 #menu_container {
   display: flex;
   flex-direction: row;
   width: 100%;
-  height: 2em;
+  height: 1.9em;
   /* background-color: rgb(13, 71, 161); */
   background-color: rgb(25, 118, 210);
   color: white;
-  font-size: 1.4em;
-  padding-left: 25%;
-  padding-right: 25%;
+  font-size: 1.3em;
+}
+#menu_content {
+  width: 60%;
+  margin: 0 auto;
 }
 .menu {
   display: block;
   width: 5em;
-  height: 2em;
-  line-height: 2em;
+  height: 1.9em;
+  line-height: 1.9em;
   text-align: center;
 }
 a.menu:link {
@@ -52,11 +62,11 @@ a.menu:visited {
 a.menu:hover {
   color: white;
   text-decoration: none;
-  background-color: rgb(21, 101, 192);;
+  background-color: rgb(21, 101, 192);
 }
 a.menu:active {
   color: white;
   text-decoration: none;
-  background-color: rgb(21, 101, 192);;
+  background-color: rgb(21, 101, 192);
 }
 </style>

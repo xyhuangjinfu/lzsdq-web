@@ -16,11 +16,16 @@ export default {
     ]
   },
 
+  env: {
+    NUXTJS_HOST: process.env.NUXTJS_HOST,
+    NUXTJS_PORT: process.env.NUXTJS_PORT,
+  },
+
   target: 'server',
 
   server: {
-    port: 3000, // default: 3000
-    host: 'localhost', // default: localhost,
+    port: process.env.NUXTJS_PORT, // default: 3000
+    host: process.env.NUXTJS_HOST, // default: localhost,
     timing: false
   },
 

@@ -3,7 +3,7 @@
     <Header />
     <div id="content">
       <ArticleList id="article_list_container" :pageData="pageData" />
-      <Hot />
+      <Hot id="hot_container"/>
     </div>
     <Footer />
   </div>
@@ -25,8 +25,11 @@
   align-items: flex-start;
 }
 #article_list_container {
-  margin: 0 auto;
+  margin: 10px auto;
   flex-grow: 1;
+}
+#hot_container{
+  margin: 10px 0;
 }
 </style>
 

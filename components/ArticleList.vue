@@ -65,7 +65,7 @@
   width: 50%;
   min-width: 700px;
   background-color: #00000000;
-  padding: 20px;
+  padding: 10px;
   overflow: hidden;
 }
 .article_item:first-child {

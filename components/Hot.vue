@@ -24,7 +24,7 @@
 #hot_container {
   width: 400px;
   min-width: 300px;
-  padding: 20px;
+  padding: 10px;
   background-color: #00000000;
 }
 #hot_content {

@@ -3,7 +3,7 @@
     <Header />
     <div id="content">
       <Article id="article_container" />
-      <Hot />
+      <Hot id="hot_container"/>
     </div>
     <Footer />
   </div>
@@ -25,8 +25,11 @@
   align-items: flex-start;
 }
 #article_container {
-  margin: 0 auto;
+  margin: 10px auto;
   flex-grow: 1;
+}
+#hot_container{
+  margin: 10px 0;
 }
 </style>
 

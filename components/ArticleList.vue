@@ -103,6 +103,7 @@
   font-size: 1.3em;
   font-weight: bold;
   color: rgb(13, 71, 161);
+  text-decoration: none;
 }
 .article_summary {
   display: -webkit-box;

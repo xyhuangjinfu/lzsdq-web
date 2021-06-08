@@ -5,9 +5,10 @@
       <div id="hot_article_list">
         <div
           class="hot_article_item"
-          v-for="article in articles"
+          v-for="(article, index) in articles"
           v-bind:key="article.id"
         >
+          <span :class="getHotClass(index)">{{ index + 1 }}&nbsp;</span>
           <router-link
             class="article_title"
             v-bind:to="'/article/' + article.id"
@@ -41,11 +42,24 @@
 .hot_article_item {
   margin-top: 10px;
 }
+.hot_number_one {
+  color: rgb(13, 71, 161);
+}
+.hot_number_two {
+  color: rgb(21, 101, 192);
+}
+.hot_number_three {
+  color: rgb(25, 118, 210);
+}
+.hot_number_four {
+  color: rgb(181, 181, 181);
+}
 .article_title {
   color: black;
 }
 .article_title:hover {
   color: rgb(13, 71, 161);
+  text-decoration: none;
 }
 </style>
 
@@ -55,6 +69,17 @@ import axios from "axios";
 
 export default {
   methods: {
+    getHotClass: function (index) {
+      if (index == 0) {
+        return "hot_number_one";
+      } else if (index == 1) {
+        return "hot_number_two";
+      } else if (index == 2) {
+        return "hot_number_three";
+      } else {
+        return "hot_number_four";
+      }
+    },
     getCreateTime: function (d) {
       return utils.format_date(d);
     },

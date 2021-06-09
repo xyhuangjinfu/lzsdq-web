@@ -70,6 +70,7 @@
 }
 .paragraph {
   text-indent: 2em;
+  line-height: 2em;
 }
 .illustration {
   width: 100%;

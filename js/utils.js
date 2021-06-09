@@ -6,24 +6,30 @@
 function format_date(d) {
   var newd = new Date(d);
   var mo = newd.getMonth() + 1;
-  if (mo < 10) {
-    mo = "0" + mo;
-  }
   var s =
     newd.getFullYear() +
     "-" +
-    mo +
+    zeroDisplay(mo) +
     "-" +
-    newd.getDate() +
+    zeroDisplay(newd.getDate()) +
     " " +
-    newd.getHours() +
+    zeroDisplay(newd.getHours()) +
     ":" +
-    newd.getMinutes() +
+    zeroDisplay(newd.getMinutes()) +
     ":" +
-    newd.getSeconds();
+    zeroDisplay(newd.getSeconds());
   return s;
 }
 
-export default {  
-  format_date  
-}  
+
+function zeroDisplay(num) {
+  if (num < 10) {
+    return "0" + num;
+  } else {
+    return "" + num;
+  }
+}
+
+export default {
+  format_date
+}

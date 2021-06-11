@@ -3,7 +3,7 @@
     <div id="search_container">
       <div id="search_content">
         <div>
-          <a href="/"><img src="~/assets/img/qwls1.png" id="logo" /></a>
+          <a href="/"><img src="~/assets/img/funny.png" id="logo" /></a>
         </div>
       </div>
     </div>
@@ -18,17 +18,18 @@
 <style scoped>
 #search_container {
   width: 100%;
-  height: 2em;
+  height: 120px;
   background-color: rgb(227, 242, 253);
   font-size: 3em;
   font-weight: bold;
+  padding: 10px 0;
 }
 #search_content {
   width: 60%;
   margin: 0 auto;
 }
 #logo {
-  height: 50px;
+  height: 100px;
 }
 #menu_container {
   display: flex;

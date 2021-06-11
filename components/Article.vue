@@ -38,10 +38,6 @@
           v-if="index == illustrationPosition && article.coverUrl !== null"
         />
       </p>
-      <hr id="declaration_divider" />
-      <p class="declaration">
-        声明：文章和图片内容源自网络，版权归原作者所有，如有侵犯您的原创版权请告知，我们将尽快删除相关内容。
-      </p>
     </div>
   </div>
 </template>
@@ -78,18 +74,6 @@
 }
 .illustration {
   width: 100%;
-}
-#declaration_divider {
-  width: 100%;
-  height: 1px;
-  border: 0;
-  background-color: rgb(181, 181, 181);
-  margin-top: 50px;
-}
-.declaration {
-  text-indent: 2em;
-  line-height: 2em;
-  color: rgb(25, 118, 210);
 }
 </style>
 

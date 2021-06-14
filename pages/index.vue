@@ -8,7 +8,7 @@
 <script>
 export default {
   asyncData({ redirect }) {
-    redirect("/page/1");
+    redirect("/dev");
   },
 };
 </script>

@@ -78,7 +78,7 @@
 </style>
 
 <script>
-import utils from "../js/utils.js";
+import utils from "~/assets/js/utils.js";
 
 export default {
   methods: {

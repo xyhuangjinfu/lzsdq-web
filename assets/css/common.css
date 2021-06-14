@@ -1,0 +1,27 @@
+/* @media screen and (min-width: 768px) {
+  .lzsdq-container {
+    width: 700px;
+    margin: 0 auto;
+  }
+} */
+@media screen and (min-width: 1366px) {
+  .lzsdq-container {
+      width: 1200px;
+      margin: 0 auto;
+  }
+}
+ 
+a {
+  text-decoration: none;
+}
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+a:active {
+  text-decoration: none;
+}

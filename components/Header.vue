@@ -1,73 +1,25 @@
 <template>
-  <div id="header">
-    <div id="search_container">
-      <div id="search_content">
-        <div>
-          <a href="/"><img src="~/assets/img/funny.png" id="logo" /></a>
-        </div>
-      </div>
-    </div>
-    <div id="menu_container">
-      <div id="menu_content">
-        <a href="/" class="menu" target="_blank">首页</a>
+  <div class="header">
+    <div class="lzsdq-container">
+      <div class="title">
+        <a href="/">
+          <div class="main-title">有意思</div>
+          <div class="sub-title">奇怪的知识增加了</div>
+        </a>
       </div>
     </div>
   </div>
 </template>
 
 <style scoped>
-#search_container {
-  width: 100%;
-  height: 120px;
-  background-color: rgb(227, 242, 253);
-  font-size: 3em;
-  font-weight: bold;
-  padding: 10px 0;
-}
-#search_content {
-  width: 60%;
-  margin: 0 auto;
-}
-#logo {
-  height: 100px;
-}
-#menu_container {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  height: 1.9em;
-  /* background-color: rgb(13, 71, 161); */
-  background-color: rgb(25, 118, 210);
-  color: white;
-  font-size: 1.3em;
-}
-#menu_content {
-  width: 60%;
-  margin: 0 auto;
-}
-.menu {
-  display: block;
-  width: 5em;
-  height: 1.9em;
-  line-height: 1.9em;
-  text-align: center;
-}
-a.menu:link {
-  color: white;
-  text-decoration: none;
-}
-a.menu:visited {
-  color: white;
-  text-decoration: none;
-}
-a.menu:hover {
-  color: white;
-  text-decoration: none;
-  background-color: rgb(21, 101, 192);
-}
-a.menu:active {
-  color: white;
-  text-decoration: none;
-  background-color: rgb(21, 101, 192);
-}
 </style>
+
+<script>
+export default {
+  head() {
+    return {
+      link: [{ rel: "stylesheet", href: require("~/assets/css/header.css") }],
+    };
+  },
+};
+</script>

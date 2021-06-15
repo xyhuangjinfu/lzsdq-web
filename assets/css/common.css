@@ -1,27 +1,8 @@
-/* @media screen and (min-width: 768px) {
-  .lzsdq-container {
-    width: 700px;
-    margin: 0 auto;
-  }
-} */
-@media screen and (min-width: 1366px) {
-  .lzsdq-container {
-      width: 1200px;
-      margin: 0 auto;
-  }
-}
- 
-a {
-  text-decoration: none;
-}
-a:visited {
+a, a:visited, a:hover, a:active{
   text-decoration: none;
 }
 
-a:hover {
-  text-decoration: none;
-}
-
-a:active {
-  text-decoration: none;
+/* 页面高度100% */
+html, body, #__nuxt, #__layout, #__layout > div {
+  height: 100%;
 }

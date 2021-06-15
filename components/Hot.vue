@@ -1,16 +1,16 @@
 <template>
-  <div id="hot_container">
-    <div id="hot_content">
-      <div id="hot_label">热门推荐</div>
-      <div id="hot_article_list">
+  <div id="hot-container">
+    <div id="hot-content">
+      <div id="hot-label">热门推荐</div>
+      <div id="hot-article-list">
         <div
-          class="hot_article_item"
+          class="hot-article-item"
           v-for="(article, index) in articles"
           v-bind:key="article.id"
         >
           <span :class="getHotClass(index)">{{ index + 1 }}&nbsp;</span>
           <router-link
-            class="article_title"
+            class="article-title"
             v-bind:to="'/article/' + article.id"
             target="_blank"
             >{{ article.title }}</router-link
@@ -22,45 +22,45 @@
 </template>
 
 <style scoped>
-#hot_container {
+/* #hot-container {
   width: 400px;
   min-width: 300px;
   padding: 10px;
   background-color: #00000000;
 }
-#hot_content {
+#hot-content {
   background-color: white;
   border-radius: 5px;
   padding: 20px;
   box-shadow: 0 4px 8px 0 rgb(220, 220, 220);
 }
-#hot_label {
+#hot-label {
   color: rgb(13, 71, 161);
   font-size: 1.3em;
   font-weight: bold;
 }
-.hot_article_item {
+.hot-article-item {
   margin-top: 10px;
 }
-.hot_number_one {
+.hot-number-one {
   color: rgb(13, 71, 161);
 }
-.hot_number_two {
+.hot-number-two {
   color: rgb(21, 101, 192);
 }
-.hot_number_three {
+.hot-number-three {
   color: rgb(25, 118, 210);
 }
-.hot_number_four {
+.hot-number-four {
   color: rgb(181, 181, 181);
 }
-.article_title {
+.article-title {
   color: black;
 }
-.article_title:hover {
+.article-title:hover {
   color: rgb(13, 71, 161);
   text-decoration: none;
-}
+} */
 </style>
 
 <script>
@@ -68,16 +68,21 @@ import utils from "~/assets/js/utils.js";
 import axios from "axios";
 
 export default {
+  head() {
+    return {
+      link: [{ rel: "stylesheet", href: require("~/assets/css/hot.css") }],
+    };
+  },
   methods: {
     getHotClass: function (index) {
       if (index == 0) {
-        return "hot_number_one";
+        return "hot-number-one";
       } else if (index == 1) {
-        return "hot_number_two";
+        return "hot-number-two";
       } else if (index == 2) {
-        return "hot_number_three";
+        return "hot-number-three";
       } else {
-        return "hot_number_four";
+        return "hot-number-four";
       }
     },
     getCreateTime: function (d) {

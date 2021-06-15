@@ -1,16 +1,28 @@
 <template>
-  <div id="page_container">
+  <!-- <div id="page_container">
     <Header />
     <div id="content">
       <ArticleList id="article_list_container" :pageData="pageData" />
       <Hot id="hot_container" />
     </div>
     <Footer />
+  </div> -->
+
+  <div class="page">
+    <Header />
+    <div class="content">
+      <ArticleList class="component-article-list" :pageData="pageData"/>
+      <div class="component-side">
+        <Hot />
+      </div>
+    </div>
+    <Footer class="component-footer"/>
   </div>
+
 </template>
 
 <style>
-#page_container {
+/* #page_container {
   min-height: 100vh;
   background-color: rgb(247, 247, 247);
   display: flex;
@@ -30,7 +42,7 @@
 }
 #hot_container {
   margin: 10px 0;
-}
+} */
 </style>
 
 
@@ -38,6 +50,16 @@
 import axios from "axios";
 
 export default {
+   head() {
+    return {
+      link: [
+        {
+          rel: "stylesheet",
+          href: require("~/assets/css/page.css"),
+        },
+      ],
+    };
+  },
   data() {
     return {
       pageData: {

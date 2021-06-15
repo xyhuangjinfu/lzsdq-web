@@ -1,6 +1,15 @@
 <template>
-  <div id="article_list_container">
-    <div id="article_list">
+  <div class="article-list-container">
+
+
+      <ArticleListItem
+        v-for="article in pageData.articles"
+        v-bind:key="article.id"
+        :article=article
+      />
+
+
+    <!-- <div id="article_list">
       <div
         class="article_item"
         v-for="article in pageData.articles"
@@ -50,8 +59,8 @@
           </div>
         </div>
       </div>
-    </div>
-    <div id="pagination">
+    </div> -->
+    <div class="pagination">
       <a :href="pageData.preUrl" v-show="pageData.page > 1">上一页</a>
       <a :href="pageData.nextUrl" v-show="pageData.page < pageData.totalPage"
         >下一页</a
@@ -61,7 +70,7 @@
 </template>
 
 <style scoped>
-#article_list_container {
+/* #article_list_container {
   width: 50%;
   min-width: 700px;
   background-color: #00000000;
@@ -76,7 +85,6 @@
   background-color: white;
   border-radius: 5px;
   padding: 20px;
-  /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
   display: flex;
   flex-flow: row nowrap;
   box-shadow: 0 4px 8px 0 rgb(220, 220, 220);
@@ -90,7 +98,6 @@
   height: 150px;
   margin-left: 20px;
   flex-grow: 1;
-  /* background-color: aquamarine; */
 
   position: relative;
 }
@@ -144,15 +151,25 @@
   text-decoration: none;
   border-radius: 5px;
   box-shadow: 0 4px 8px 0 rgb(220, 220, 220);
-}
+} */
 </style>
 
 
 <script>
 import utils from "~/assets/js/utils.js";
-import axios from "axios";
+// import axios from "axios";
 
 export default {
+  head() {
+    return {
+      link: [
+        {
+          rel: "stylesheet",
+          href: require("~/assets/css/article_list.css"),
+        },
+      ],
+    };
+  },
   props: ["pageData"],
   methods: {
     getCreateTime: function (d) {

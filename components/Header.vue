@@ -1,6 +1,6 @@
 <template>
-  <div class="header">
-    <div class="lzsdq-container">
+  <div class="header-container">
+    <div class="header-content">
       <div class="title">
         <a href="/">
           <div class="main-title">有意思</div>

@@ -1,28 +1,28 @@
 <template>
-  <div id="article_container">
-    <div id="article_content">
-      <div id="article_title">{{ article.title }}</div>
-      <div class="article_meta">
+  <div class="article-container">
+    <div class="article-content">
+      <div class="article-title">{{ article.title }}</div>
+      <div class="article-meta">
         <img
           style="vertical-align: middle"
-          class="article_create_time_icon"
+          class="article-create-time-icon"
           src="~/assets/img/time.png"
           width="25px"
           height="25px"
         />
-        <span class="article_create_time">
+        <span class="article-create-time">
           {{ getCreateTime(article.createTime) }}
         </span>
         <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
         <img
           style="vertical-align: middle"
-          class="article_read_count_icon"
+          class="article-read-count-icon"
           src="~/assets/img/eye.png"
           width="20px"
           height="20px"
         />
         <span>&nbsp;</span>
-        <span class="article_read_count">
+        <span class="article-read-count">
           {{ article.readRecord.readCount }}
         </span>
       </div>
@@ -43,7 +43,7 @@
 </template>
 
 <style scoped>
-#article_container {
+/* #article_container {
   width: 50%;
   min-width: 700px;
   background-color: #00000000;
@@ -74,13 +74,23 @@
 }
 .illustration {
   width: 100%;
-}
+} */
 </style>
 
 <script>
 import utils from "~/assets/js/utils.js";
 
 export default {
+  head() {
+    return {
+      link: [
+        {
+          rel: "stylesheet",
+          href: require("~/assets/css/article.css"),
+        },
+      ],
+    };
+  },
   methods: {
     getCreateTime: function (d) {
       return utils.format_date(d);

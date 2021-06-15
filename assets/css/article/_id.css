@@ -1,0 +1,85 @@
+.page {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.page .content {
+  flex-grow: 1;
+  margin: 0 auto;
+
+  display: flex;
+  flex: row nowrap;
+
+  padding: 40px 0;
+}
+
+.page .content .component-article {
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 0 4px 8px 0 rgb(220, 220, 220);
+}
+
+/* 中屏 横屏 */
+@media screen and (min-width:960px) and (orientation : landscape) {
+  .page .content {
+    width: 900px;
+  }
+  .page .content .component-article {
+    width: 590px;
+  }
+  .page .content .component-side {
+    width: 290px;
+    margin-left: 20px;
+  }
+}
+/* 宽屏 横屏 */
+@media screen and (min-width:1200px) and (orientation : landscape) {
+  .page .content {
+    width: 1000px;
+  }
+  .page .content .component-article {
+    width: 640px;
+  }
+  .page .content .component-side {
+    width: 330px;
+    margin-left: 30px;
+  }
+}
+/* 超宽屏 横屏 */
+@media screen and (min-width:1600px) and (orientation : landscape) {
+  .page .content {
+    width: 1400px;
+  }
+  .page .content .component-article {
+    width: 910px;
+  }
+  .page .content .component-side {
+    width: 450px;
+    margin-left: 40px;
+  }
+}
+/* 窄屏 */
+@media screen and (max-width:959px) and (orientation : landscape) {
+  .page .content {
+    width: 100%;
+  }
+  .page .content .component-article {
+    width: 100%;
+  }
+  .page .content .component-side {
+    display: none;
+  }
+}
+/* 竖屏 */
+@media screen and (orientation : portrait) {
+  .page .content {
+    width: 100%;
+  }
+  .page .content .component-article {
+    width: 100%;
+  }
+  .page .content .component-side {
+    display: none;
+  }
+}

@@ -1,8 +1,8 @@
 <template>
-  <div id="hot-container">
-    <div id="hot-content">
-      <div id="hot-label">热门推荐</div>
-      <div id="hot-article-list">
+  <div class="hot-container">
+    <div class="hot-content">
+      <div class="hot-label">热门推荐</div>
+      <div class="hot-article-list">
         <div
           class="hot-article-item"
           v-for="(article, index) in articles"

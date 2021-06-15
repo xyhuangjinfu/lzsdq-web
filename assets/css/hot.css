@@ -1,38 +1,38 @@
-#hot-container {
+.hot-container {
   width: 100%;
   padding: 5px;
   background-color: #00000000;
 }
-#hot-content {
+.hot-content {
   background-color: white;
   border-radius: 5px;
   padding: 20px;
   box-shadow: 0 4px 8px 0 rgb(220, 220, 220);
 }
-#hot-label {
+.hot-content .hot-label {
   color: rgb(13, 71, 161);
   font-size: 1.3em;
   font-weight: bold;
 }
-.hot-article-item {
+.hot-content .hot-article-item {
   margin-top: 10px;
 }
-.hot-number-one {
+.hot-content .hot-number-one {
   color: rgb(13, 71, 161);
 }
-.hot-number-two {
+.hot-content .hot-number-two {
   color: rgb(21, 101, 192);
 }
-.hot-number-three {
+.hot-content .hot-number-three {
   color: rgb(25, 118, 210);
 }
-.hot-number-four {
+.hot-content .hot-number-four {
   color: rgb(181, 181, 181);
 }
-.article-title {
+.hot-content .article-title {
   color: black;
 }
-.article-title:hover {
+.hot-content .article-title:hover {
   color: rgb(13, 71, 161);
   text-decoration: none;
 }

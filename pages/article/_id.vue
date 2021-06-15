@@ -1,16 +1,18 @@
 <template>
-  <div id="page_container">
+  <div class="page">
     <Header />
-    <div id="content">
-      <Article id="article_container" />
-      <Hot id="hot_container" />
+    <div class="content">
+      <Article class="component-article" />
+      <div class="component-side">
+        <Hot />
+      </div>
     </div>
     <Footer />
   </div>
 </template>
 
 <style>
-#page_container {
+/* #page_container {
   min-height: 100vh;
   background-color: rgb(247, 247, 247);
   display: flex;
@@ -30,7 +32,7 @@
 }
 #hot_container {
   margin: 10px 0;
-}
+} */
 </style>
 
 <script>
@@ -43,6 +45,12 @@ export default {
           hid: "description",
           name: "description",
           content: "Home page description",
+        },
+      ],
+      link: [
+        {
+          rel: "stylesheet",
+          href: require("~/assets/css/article/_id.css"),
         },
       ],
     };

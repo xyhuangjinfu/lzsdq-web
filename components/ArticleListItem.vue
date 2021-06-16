@@ -6,7 +6,7 @@
         class="article-cover"
         :src="
           article.coverUrl == null
-            ? require('~/assets/img/qwls2.png')
+            ? require('~/assets/img/yys.png')
             : article.coverUrl
         "
       />

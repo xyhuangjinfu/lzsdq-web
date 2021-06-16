@@ -43,38 +43,6 @@
 </template>
 
 <style scoped>
-/* #article_container {
-  width: 50%;
-  min-width: 700px;
-  background-color: #00000000;
-  padding: 10px;
-  overflow: hidden;
-}
-#article_content {
-  background-color: white;
-  border-radius: 5px;
-  padding: 20px;
-  box-shadow: 0 4px 8px 0 rgb(220, 220, 220);
-}
-#article_title {
-  font-size: 1.8em;
-  font-weight: bold;
-  color: black;
-}
-.article_meta {
-  color: rgb(181, 181, 181);
-  display: flex;
-  flex-flow: row nowrap;
-  align-items: center;
-  margin-bottom: 50px;
-}
-.paragraph {
-  text-indent: 2em;
-  line-height: 2em;
-}
-.illustration {
-  width: 100%;
-} */
 </style>
 
 <script>
@@ -86,7 +54,7 @@ export default {
       link: [
         {
           rel: "stylesheet",
-          href: require("~/assets/css/article.css"),
+          href: require("~/assets/css/components/article.css"),
         },
       ],
     };

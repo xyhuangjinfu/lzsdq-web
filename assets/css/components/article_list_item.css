@@ -1,22 +1,15 @@
-
-.article-list-item:first-child {
-  margin-top: 0rem;
-}
-.article-list-item {
-  margin-top: 2rem;
-}
-.article-list-item-content:first-child {
-  margin-top: 0rem;
+.article-list-item-container {
+  width: 100%;
+  background-color: white;
 }
 .article-list-item-content {
   width: 100%;
   background-color: white;
   display: flex;
   flex-flow: row nowrap;
-  box-shadow: 0 4px 8px 0 rgb(220, 220, 220);
-  margin-top: 2rem;
   border-radius: 5px;
   padding: 1rem;
+  box-shadow: 0 4px 8px 0 rgb(220, 220, 220);
 }
 .article-list-item-content .article-info {
   position: relative;
@@ -49,6 +42,7 @@
   position: absolute;
   bottom: 0;
   right: 0;
+  font-size: 0.9rem;
 }
 
 

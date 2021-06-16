@@ -1,65 +1,10 @@
 <template>
   <div class="article-list-container">
-
-
-      <ArticleListItem
-        v-for="article in pageData.articles"
-        v-bind:key="article.id"
-        :article=article
-      />
-
-
-    <!-- <div id="article_list">
-      <div
-        class="article_item"
-        v-for="article in pageData.articles"
-        v-bind:key="article.id"
-      >
-        <div>
-          <img
-            class="article_cover"
-            :src="
-              article.coverUrl == null
-                ? require('~/assets/img/qwls2.png')
-                : article.coverUrl
-            "
-          />
-        </div>
-        <div class="article_info">
-          <router-link
-            class="article_title"
-            v-bind:to="'/article/' + article.id"
-            target="_blank"
-            >{{ article.title }}</router-link
-          >
-          <p class="article_summary">{{ article.summary }}</p>
-          <div class="article_meta">
-            <img
-              style="vertical-align: middle"
-              class="article_create_time_icon"
-              src="~/assets/img/time.png"
-              width="25px"
-              height="25px"
-            />
-            <span class="article_create_time">
-              {{ getCreateTime(article.createTime) }}
-            </span>
-            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-            <img
-              style="vertical-align: middle"
-              class="article_read_count_icon"
-              src="~/assets/img/eye.png"
-              width="20px"
-              height="20px"
-            />
-            <span>&nbsp;</span>
-            <span class="article_read_count">
-              {{ article.readRecord.readCount }}
-            </span>
-          </div>
-        </div>
-      </div>
-    </div> -->
+    <ArticleListItem class="component-article"
+      v-for="article in pageData.articles"
+      v-bind:key="article.id"
+      :article="article"
+    />
     <div class="pagination">
       <a :href="pageData.preUrl" v-show="pageData.page > 1">上一页</a>
       <a :href="pageData.nextUrl" v-show="pageData.page < pageData.totalPage"
@@ -70,94 +15,11 @@
 </template>
 
 <style scoped>
-/* #article_list_container {
-  width: 50%;
-  min-width: 700px;
-  background-color: #00000000;
-  padding: 10px;
-  overflow: hidden;
-}
-.article_item:first-child {
-  margin-top: 0;
-}
-.article_item {
-  margin-top: 20px;
-  background-color: white;
-  border-radius: 5px;
-  padding: 20px;
-  display: flex;
-  flex-flow: row nowrap;
-  box-shadow: 0 4px 8px 0 rgb(220, 220, 220);
-}
-.article_cover {
-  width: 200px;
-  height: 150px;
-  border-radius: 5px;
-}
-.article_info {
-  height: 150px;
-  margin-left: 20px;
-  flex-grow: 1;
-
-  position: relative;
-}
-.article_title {
-  font-size: 1.3em;
-  font-weight: bold;
-  color: black;
-}
-.article_title:hover {
-  font-size: 1.3em;
-  font-weight: bold;
-  color: rgb(13, 71, 161);
-  text-decoration: none;
-}
-.article_summary {
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
-  overflow: hidden;
-  color: rgb(181, 181, 181);
-  margin-top: 20px;
-}
-.article_meta {
-  color: rgb(181, 181, 181);
-  position: absolute;
-  bottom: 0;
-  display: flex;
-  flex-flow: row nowrap;
-  align-items: center;
-}
-#pagination {
-  margin-top: 20px;
-  float: right;
-}
-#pagination a {
-  color: rgb(13, 71, 161);
-  background-color: white;
-  margin-top: 20px;
-  padding: 8px 16px;
-  font-weight: bold;
-  text-decoration: none;
-  border-radius: 5px;
-  box-shadow: 0 4px 8px 0 rgb(220, 220, 220);
-}
-#pagination a:hover {
-  color: white;
-  background-color: rgb(13, 71, 161);
-  margin-top: 20px;
-  padding: 8px 16px;
-  font-weight: bold;
-  text-decoration: none;
-  border-radius: 5px;
-  box-shadow: 0 4px 8px 0 rgb(220, 220, 220);
-} */
 </style>
 
 
 <script>
 import utils from "~/assets/js/utils.js";
-// import axios from "axios";
 
 export default {
   head() {
@@ -165,7 +27,7 @@ export default {
       link: [
         {
           rel: "stylesheet",
-          href: require("~/assets/css/article_list.css"),
+          href: require("~/assets/css/components/article_list.css"),
         },
       ],
     };
@@ -176,27 +38,5 @@ export default {
       return utils.format_date(d);
     },
   },
-  // data() {
-  //   return {
-  //     pageData: {
-  //       page: 0,
-  //       totalPage: 0,
-  //       articles: [],
-  //       preUrl:"#",
-  //       nextUrl:"#",
-  //     },
-  //   };
-  // },
-  // async fetch() {
-  //   this.pageData = await axios
-  //     .get("http://www.lzsdq.cn:9999/api/articles/?page_size=5&page_num=1")
-  //     .then((resp) => {
-  //       return {
-  //         page: resp.data.page,
-  //         totalPage: resp.data.totalPage,
-  //         articles: resp.data.data,
-  //       };
-  //     });
-  // },
 };
 </script>

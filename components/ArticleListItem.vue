@@ -1,5 +1,5 @@
 <template>
-<div class="article-list-item">
+<div class="article-list-item-container">
   <a :href="'/article/' + article.id" target="_blank">
     <div class="article-list-item-content">
       <img
@@ -34,7 +34,7 @@ export default {
       link: [
         {
           rel: "stylesheet",
-          href: require("~/assets/css/article_list_item.css"),
+          href: require("~/assets/css/components/article_list_item.css"),
         },
       ],
     };

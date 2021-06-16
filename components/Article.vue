@@ -3,7 +3,8 @@
     <div class="article-content">
       <div class="article-title">{{ article.title }}</div>
       <div class="article-meta">
-        <img
+        阅读({{ article.readRecord.readCount }})
+        <!-- <img
           style="vertical-align: middle"
           class="article-create-time-icon"
           src="~/assets/img/time.png"
@@ -24,7 +25,7 @@
         <span>&nbsp;</span>
         <span class="article-read-count">
           {{ article.readRecord.readCount }}
-        </span>
+        </span> -->
       </div>
       <p
         class="paragraph"

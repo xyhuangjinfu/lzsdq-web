@@ -19,6 +19,8 @@
   flex-flow: row nowrap;
   align-items: center;
   margin-bottom: 50px;
+  margin-top: 10px;
+  font-size: 0.9rem;
 }
 .illustration {
   width: 100%;

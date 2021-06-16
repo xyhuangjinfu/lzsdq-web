@@ -55,7 +55,7 @@ export default {
       link: [
         {
           rel: "stylesheet",
-          href: require("~/assets/css/page/_page.css"),
+          href: require("~/assets/css/pages/page/_page.css"),
         },
       ],
     };

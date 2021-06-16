@@ -50,7 +50,7 @@ export default {
       link: [
         {
           rel: "stylesheet",
-          href: require("~/assets/css/article/_id.css"),
+          href: require("~/assets/css/pages/article/_id.css"),
         },
       ],
     };

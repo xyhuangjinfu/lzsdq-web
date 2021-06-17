@@ -1,12 +1,11 @@
 
 .article-list-container {
   width: 100%;
-  padding: 5px;
 }
-.component-article:first-child {
+.article-list-item:first-child {
   margin-top: 0;
 }
-.component-article {
+.article-list-item {
   margin-top: 20px;
 }
 .article-list-container .pagination {

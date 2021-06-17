@@ -1,9 +1,11 @@
 <template>
-  <div class="page">
+  <div class="page-article">
     <Header />
     <div class="content">
-      <Article class="component-article" />
-      <div class="component-side">
+      <div class="article">
+        <Article />
+      </div>
+      <div class="side">
         <Hot />
       </div>
     </div>
@@ -12,27 +14,6 @@
 </template>
 
 <style>
-/* #page_container {
-  min-height: 100vh;
-  background-color: rgb(247, 247, 247);
-  display: flex;
-  flex-flow: column nowrap;
-}
-#content {
-  width: 65%;
-  margin: 0 auto;
-  flex-grow: 1;
-  display: flex;
-  flex-flow: row nowrap;
-  align-items: flex-start;
-}
-#article_container {
-  margin: 10px auto;
-  flex-grow: 1;
-}
-#hot_container {
-  margin: 10px 0;
-} */
 </style>
 
 <script>

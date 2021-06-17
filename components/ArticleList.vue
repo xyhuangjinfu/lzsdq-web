@@ -1,10 +1,12 @@
 <template>
   <div class="article-list-container">
-    <ArticleListItem class="component-article"
+    <div
+      class="article-list-item"
       v-for="article in pageData.articles"
       v-bind:key="article.id"
-      :article="article"
-    />
+    >
+      <ArticleListItem :article="article" />
+    </div>
     <div class="pagination">
       <a :href="pageData.preUrl" v-show="pageData.page > 1">上一页</a>
       <a :href="pageData.nextUrl" v-show="pageData.page < pageData.totalPage"

@@ -1,22 +1,22 @@
 @import url("~/assets/css/common.css");
 
-.page {
+.page-article {
   height: 100%;
   display: flex;
   flex-direction: column;
 }
 
-.page .content {
+.page-article .content {
   flex-grow: 1;
   margin: 0 auto;
 
   display: flex;
   flex: row nowrap;
 
-  padding: 40px 0;
+  padding: 4rem 0;
 }
 
-.page .content .component-article {
+.page-article .content .article {
   border-radius: 3px;
   padding: 20px;
   box-shadow: 0 0 4px 0 rgb(220, 220, 220);
@@ -24,64 +24,54 @@
 
 /* 中屏 横屏 */
 @media screen and (min-width:960px) and (orientation : landscape) {
-  .page .content {
+  .page-article .content {
     width: 900px;
   }
-  .page .content .component-article {
+  .page-article .content .article {
     width: 590px;
   }
-  .page .content .component-side {
+  .page-article .content .side {
     width: 290px;
     margin-left: 20px;
   }
 }
 /* 宽屏 横屏 */
 @media screen and (min-width:1200px) and (orientation : landscape) {
-  .page .content {
+  .page-article .content {
     width: 1000px;
   }
-  .page .content .component-article {
+  .page-article .content .article {
     width: 650px;
   }
-  .page .content .component-side {
+  .page-article .content .side {
     width: 330px;
     margin-left: 20px;
   }
 }
 /* 超宽屏 横屏 */
 @media screen and (min-width:1600px) and (orientation : landscape) {
-  .page .content {
+  .page-article .content {
     width: 1400px;
   }
-  .page .content .component-article {
+  .page-article .content .article {
     width: 920px;
   }
-  .page .content .component-side {
+  .page-article .content .side {
     width: 460px;
     margin-left: 20px;
   }
 }
 /* 窄屏 */
-@media screen and (max-width:959px) and (orientation : landscape) {
-  .page .content {
-    width: 100%;
-  }
-  .page .content .component-article {
-    width: 100%;
-  }
-  .page .content .component-side {
-    display: none;
-  }
-}
 /* 竖屏 */
-@media screen and (orientation : portrait) {
-  .page .content {
+@media screen and (orientation : portrait), screen and (max-width:959px) and (orientation : landscape) {
+  .page-article .content {
+    width: 100%;
+    padding: 4rem 0.5rem;
+  }
+  .page-article .content .article {
     width: 100%;
   }
-  .page .content .component-article {
-    width: 100%;
-  }
-  .page .content .component-side {
+  .page-article .content .side {
     display: none;
   }
 }

@@ -1,48 +1,20 @@
 <template>
-  <!-- <div id="page_container">
-    <Header />
-    <div id="content">
-      <ArticleList id="article_list_container" :pageData="pageData" />
-      <Hot id="hot_container" />
-    </div>
-    <Footer />
-  </div> -->
-
-  <div class="page">
+  <div class="pagination-page">
     <Header />
     <div class="content">
-      <ArticleList class="component-article-list" :pageData="pageData"/>
-      <div class="component-side">
+      <div class="article-list">
+        <ArticleList :pageData="pageData"/>
+      </div>
+      <div class="side">
         <Hot />
       </div>
     </div>
-    <Footer class="component-footer"/>
+    <Footer/>
   </div>
 
 </template>
 
 <style>
-/* #page_container {
-  min-height: 100vh;
-  background-color: rgb(247, 247, 247);
-  display: flex;
-  flex-flow: column nowrap;
-}
-#content {
-  width: 65%;
-  margin: 0 auto;
-  flex-grow: 1;
-  display: flex;
-  flex-flow: row nowrap;
-  align-items: flex-start;
-}
-#article_list_container {
-  margin: 10px auto;
-  flex-grow: 1;
-}
-#hot_container {
-  margin: 10px 0;
-} */
 </style>
 
 

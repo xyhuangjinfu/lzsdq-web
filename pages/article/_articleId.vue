@@ -1,7 +1,7 @@
 <template>
-  <div class="page-article">
+  <div class="article-page display-flex flex-direction-column">
     <Header />
-    <div class="content">
+    <div class="content flex-1">
       <div class="article">
         <Article :article="article" />
       </div>

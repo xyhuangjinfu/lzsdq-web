@@ -1,22 +1,18 @@
 @import url("~/assets/css/common.css");
 
-.page-article {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
+.article-page {
+  min-height: 100%;
 }
 
-.page-article .content {
-  flex-grow: 1;
+.article-page .content {
   margin: 0 auto;
+  padding: 4rem 0;
 
   display: flex;
   flex: row nowrap;
-
-  padding: 4rem 0;
 }
 
-.page-article .content .article {
+.article-page .content .article {
   border-radius: 3px;
   padding: 20px;
   box-shadow: 0 0 4px 0 rgb(220, 220, 220);
@@ -24,39 +20,39 @@
 
 /* 中屏 横屏 */
 @media screen and (min-width:960px) and (orientation : landscape) {
-  .page-article .content {
+  .article-page .content {
     width: 900px;
   }
-  .page-article .content .article {
+  .article-page .content .article {
     width: 590px;
   }
-  .page-article .content .side {
+  .article-page .content .side {
     width: 290px;
     margin-left: 20px;
   }
 }
 /* 宽屏 横屏 */
 @media screen and (min-width:1200px) and (orientation : landscape) {
-  .page-article .content {
+  .article-page .content {
     width: 1000px;
   }
-  .page-article .content .article {
+  .article-page .content .article {
     width: 650px;
   }
-  .page-article .content .side {
+  .article-page .content .side {
     width: 330px;
     margin-left: 20px;
   }
 }
 /* 超宽屏 横屏 */
 @media screen and (min-width:1600px) and (orientation : landscape) {
-  .page-article .content {
+  .article-page .content {
     width: 1400px;
   }
-  .page-article .content .article {
+  .article-page .content .article {
     width: 920px;
   }
-  .page-article .content .side {
+  .article-page .content .side {
     width: 460px;
     margin-left: 20px;
   }
@@ -64,14 +60,14 @@
 /* 窄屏 */
 /* 竖屏 */
 @media screen and (orientation : portrait), screen and (max-width:959px) and (orientation : landscape) {
-  .page-article .content {
+  .article-page .content {
     width: 100%;
     padding: 4rem 0.5rem;
   }
-  .page-article .content .article {
+  .article-page .content .article {
     width: 100%;
   }
-  .page-article .content .side {
+  .article-page .content .side {
     display: none;
   }
 }

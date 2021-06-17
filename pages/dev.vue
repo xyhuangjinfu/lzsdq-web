@@ -1,51 +1,193 @@
 <template>
-<div>
-  <!-- <div id="container" style="background-color: red">
-    <div class="row">
-      <div class="col-md-1" style="background-color:blue;height:200px;">
-        1
-      </div>
-    </div>
-  </div> -->
-
-  <!-- <div>
-    <img class="cover" src="https://i.loli.net/2021/06/08/ItD8LEwjpsA4bTq.jpg" />
-  </div> -->
-
-  <!-- <div id="container">
-    <div class="row">
-      <div class="col-lg-4" style="background-color:red;">a</div>
-      <div class="col-lg-1 d-none d-lg-block" style="background-color:blue;">a</div>
-    </div>
-  </div> -->
-
-  <!-- <div>
-    <div class="row">
-      <div class="col-lg-2" style="background-color:red;">
-        <img class="cover img-fluid" src="https://i.loli.net/2021/06/08/ItD8LEwjpsA4bTq.jpg" />
-      </div>
-    <div class="col-lg-10" style="background-color:blue;"> la</div>
-    </div>
-  </div> -->
-
- <!-- <div id="container"> 
-   <div class="row" style="background-color:green">aaaaa</div>
-   <div class="col-12" style="background-color:blue">bbb</div>
-  <div class="row gx-4">
-    <div class="article-list-container col-lg-6 offset-lg-2" style="background-color:red;"><ArticleListItem /></div>
-    <div class="col-lg-2" style="background-color:#55dd9933">热门推荐</div>
+    <div class="page display_flex flex-direction_column">
+    <div class="header">header</div>
+    <div class="flex_1">
+      <ul>
+        <li>aaaaaaaaaa</li>
+        <li>aaaaaaaaaa</li>
+        <li>aaaaaaaaaa</li>
+        <li>aaaaaaaaaa</li>
+        <li>aaaaaaaaaa</li>
+        <li>aaaaaaaaaa</li>
+        <li>aaaaaaaaaa</li>
+        <li>aaaaaaaaaa</li>
+        <li>aaaaaaaaaa</li>
+        <li>aaaaaaaaaa</li>
+        <li>aaaaaaaaaa</li>
+        <li>aaaaaaaaaa</li>
+        <li>aaaaaaaaaa</li>
+        <li>aaaaaaaaaa</li>
+        <li>aaaaaaaaaa</li>
+        <li>aaaaaaaaaa</li>
+        <li>aaaaaaaaaa</li>
+        <li>aaaaaaaaaa</li>
+        <li>aaaaaaaaaa</li>
+        <li>aaaaaaaaaa</li>
+        <li>aaaaaaaaaa</li>
+        <li>aaaaaaaaaa</li>
+        <li>aaaaaaaaaa</li>
+        <li>aaaaaaaaaa</li>
+        <li>aaaaaaaaaa</li>
+        <li>aaaaaaaaaa</li>
+        <li>aaaaaaaaaa</li>
+        <li>aaaaaaaaaa</li>
+        <li>aaaaaaaaaa</li>
+        <li>aaaaaaaaaa</li>
+        <li>aaaaaaaaaa</li>
+        <li>aaaaaaaaaa</li>
+        <li>aaaaaaaaaa</li>
+        <li>aaaaaaaaaa</li>
+        <li>aaaaaaaaaa</li>
+        <li>aaaaaaaaaa</li>
+        <li>aaaaaaaaaa</li>
+        <li>aaaaaaaaaa</li>
+        <li>aaaaaaaaaa</li>
+        <li>aaaaaaaaaa</li>
+        <li>aaaaaaaaaa</li>
+        <li>aaaaaaaaaa</li>
+        <li>aaaaaaaaaa</li>
+        <li>aaaaaaaaaa</li>
+        <li>aaaaaaaaaa</li>
+        <li>aaaaaaaaaa</li>
+        <li>aaaaaaaaaa</li>
     
-  </div>
-  </div> -->
 
-  <div style="background-color:blue;">aaa</div>
 
+
+
+
+        <li>bbbbbbbbbb</li>
+
+      </ul>
+    </div>
+    <div class="footer">footer</div>
   </div>
 </template>
 
 <style>
-.article-list-container{
-  padding: 0;
+html, body, #__nuxt, #__layout, #__layout > div {
+  height: 100%;
+}
+
+
+
+.display_flex{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+}
+.display_flex > *{
+    display: block;
+}
+.display_inline-flex{
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: -webkit-inline-flex;
+    display: inline-flex;    
+}
+.display_inline-flex > *{
+    display: block;
+}
+/*伸缩流方向*/
+.flex-direction_column{
+    -webkit-box-orient: vertical;
+    -ms-flex-direction: column;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+}
+/*主轴对齐*/
+.justify-content_flex-center{
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+}
+.justify-content_flex-end{
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    -webkit-justify-content: flex-end;
+    justify-content: flex-end;
+}
+.justify-content_flex-justify{
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+}
+/*侧轴对齐*/
+.align-items_flex-start{
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    -webkit-align-items: flex-start;
+    align-items: flex-start;
+}
+.align-items_flex-end{
+    -webkit-box-align: end;
+    -ms-flex-align: end;
+    -webkit-align-items: flex-end;
+    align-items: flex-end;
+}
+.align-items_center{
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+.align-items_baseline{
+    -webkit-box-align: baseline;
+    -ms-flex-align: baseline;
+    -webkit-align-items: baseline;
+    align-items: baseline;
+}
+/*伸缩性*/
+.flex_auto{
+    -webkit-box-flex: 1;
+    -ms-flex: auto;
+    -webkit-flex: auto;
+    flex: auto;
+}
+.flex_1{
+    /* width: 0; */
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    -webkit-flex: 1;
+    flex: 1;    
+}
+/*显示顺序*/
+.order_2{
+    -webkit-box-ordinal-group: 2;
+    -ms-flex-order: 2;
+    -webkit-order: 2;
+    order: 2;
+}
+.order_3{
+    -webkit-box-ordinal-group: 3;
+    -ms-flex-order: 3;
+    -webkit-order: 3;
+    order: 3;
+}
+
+
+.page {
+  /* height: 100%; */
+  min-height: 100%;
+  background-color: coral;
+}
+
+/* .content {
+  height: auto;
+  background-color: yellowgreen;
+  flex-grow: 1;
+} */
+ul, li{
+  background-color:violet;
+}
+.header{
+  background-color: red;
+}
+.footer{
+  background-color: blue;
 }
 </style>
 

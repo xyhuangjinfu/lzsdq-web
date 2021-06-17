@@ -30,6 +30,10 @@ export default {
           name: "description",
           content: "有意思-奇怪的知识增加了",
         },
+        {
+          name: "keywords",
+          content: "有意思-奇怪的知识增加了",
+        },
       ],
     };
   },

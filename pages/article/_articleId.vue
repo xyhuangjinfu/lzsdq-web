@@ -27,6 +27,10 @@ export default {
           name: "description",
           content: this.article.title,
         },
+        {
+          name: "keywords",
+          content: this.article.title,
+        },
       ],
     };
   },

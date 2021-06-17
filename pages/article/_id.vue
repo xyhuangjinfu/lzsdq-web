@@ -3,7 +3,7 @@
     <Header />
     <div class="content">
       <div class="article">
-        <Article />
+        <Article  :article="article"/>
       </div>
       <div class="side">
         <Hot />

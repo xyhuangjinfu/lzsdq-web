@@ -38,6 +38,7 @@ export default {
       ],
     };
   },
+  props: ["article"],
   methods: {
     getCreateTime: function (d) {
       return utils.format_date(d);
@@ -55,15 +56,9 @@ export default {
   data() {
     return {
       illustrationPosition: 0,
-      article: {},
     };
   },
   async fetch() {
-    this.article = await fetch(
-      "http://www.lzsdq.cn:9999/api/articles/" + this.$route.params.id
-    ).then((res) => {
-      return res.json();
-    });
     this.illustrationPosition = this.getIllustrationPosition(
       this.article.paragraphs.length
     );

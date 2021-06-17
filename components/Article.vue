@@ -1,7 +1,7 @@
 <template>
   <div class="article-container">
     <div class="article-content">
-      <div class="article-title">{{ article.title }}</div>
+      <h1 class="article-title">{{ article.title }}</h1>
       <div class="article-meta">阅读({{ article.readRecord.readCount }})</div>
       <p
         class="paragraph"

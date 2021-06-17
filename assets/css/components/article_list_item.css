@@ -16,6 +16,7 @@
   flex-grow: 1;
 }
 .article-list-item-content .article-cover {
+  width: 16rem;
   height: 12rem;
   border-radius: 5px;
   margin-right: 1rem;
@@ -50,18 +51,21 @@
 /* 中屏 横屏 */
 @media screen and (min-width:960px) and (orientation : landscape) {
   .article-list-item-content .article-cover {
+    width: 12rem;
     height: 9rem;
   }
 }
 /* 宽屏 横屏 */
 @media screen and (min-width:1200px) and (orientation : landscape) {
   .article-list-item-content .article-cover {
+    width: 12rem;
     height: 9rem;
   }
 }
 /* 超宽屏 横屏 */
 @media screen and (min-width:1600px) and (orientation : landscape) {
   .article-list-item-content .article-cover {
+    width: 16rem;
     height: 12rem;
   }
 }
@@ -72,6 +76,7 @@
     width: 100%;
   } 
   .article-list-item-content .article-cover {
+    width: 26.7vw;
     height: 20vw;
     border-radius: 5px;
     margin-right: 1rem;

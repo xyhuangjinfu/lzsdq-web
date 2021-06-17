@@ -29,7 +29,7 @@ export default {
       link: [
         {
           rel: "stylesheet",
-          href: require("~/assets/css/components/article_list.css"),
+          href: require("~/assets/css/components/ArticleList.css"),
         },
       ],
     };

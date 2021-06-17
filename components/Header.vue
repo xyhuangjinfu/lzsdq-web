@@ -18,7 +18,7 @@
 export default {
   head() {
     return {
-      link: [{ rel: "stylesheet", href: require("~/assets/css/components/header.css") }],
+      link: [{ rel: "stylesheet", href: require("~/assets/css/components/Header.css") }],
     };
   },
 };

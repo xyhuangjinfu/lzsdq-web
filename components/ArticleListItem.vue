@@ -34,7 +34,7 @@ export default {
       link: [
         {
           rel: "stylesheet",
-          href: require("~/assets/css/components/article_list_item.css"),
+          href: require("~/assets/css/components/ArticleListItem.css"),
         },
       ],
     };

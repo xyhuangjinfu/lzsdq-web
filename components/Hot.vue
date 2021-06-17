@@ -31,7 +31,7 @@ import axios from "axios";
 export default {
   head() {
     return {
-      link: [{ rel: "stylesheet", href: require("~/assets/css/components/hot.css") }],
+      link: [{ rel: "stylesheet", href: require("~/assets/css/components/Hot.css") }],
     };
   },
   methods: {

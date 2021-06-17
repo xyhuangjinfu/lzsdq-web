@@ -33,7 +33,7 @@ export default {
       link: [
         {
           rel: "stylesheet",
-          href: require("~/assets/css/components/article.css"),
+          href: require("~/assets/css/components/Article.css"),
         },
       ],
     };

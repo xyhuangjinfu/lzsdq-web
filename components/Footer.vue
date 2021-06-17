@@ -17,7 +17,7 @@
 export default {
   head() {
     return {
-      link: [{ rel: "stylesheet", href: require("~/assets/css/components/footer.css") }],
+      link: [{ rel: "stylesheet", href: require("~/assets/css/components/Footer.css") }],
     };
   },
 };

@@ -1,11 +1,9 @@
 .article_container {
   width: 100%;
-  background-color: red;
   padding: 10px;
 }
 .article-container .article_content {
-  background-color: red;
-  border-radius: 5px;
+  border-radius: 2px;
   padding: 20px;
   box-shadow: 0 4px 8px 0 rgb(220, 220, 220);
 }

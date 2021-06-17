@@ -7,7 +7,7 @@
   background-color: white;
   display: flex;
   flex-flow: row nowrap;
-  border-radius: 5px;
+  border-radius: 2px;
   padding: 1rem;
   box-shadow: 0 4px 8px 0 rgb(220, 220, 220);
 }
@@ -18,7 +18,7 @@
 .article-list-item-content .article-cover {
   width: 16rem;
   height: 12rem;
-  border-radius: 5px;
+  border-radius: 2px;
   margin-right: 1rem;
 }
 .article-list-item-content .article-title {
@@ -78,7 +78,7 @@
   .article-list-item-content .article-cover {
     width: 26.7vw;
     height: 20vw;
-    border-radius: 5px;
+    border-radius: 2px;
     margin-right: 1rem;
   }
   .article-list-item-content .article-title {

@@ -4,28 +4,6 @@
       <div class="article-title">{{ article.title }}</div>
       <div class="article-meta">
         阅读({{ article.readRecord.readCount }})
-        <!-- <img
-          style="vertical-align: middle"
-          class="article-create-time-icon"
-          src="~/assets/img/time.png"
-          width="25px"
-          height="25px"
-        />
-        <span class="article-create-time">
-          {{ getCreateTime(article.createTime) }}
-        </span>
-        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-        <img
-          style="vertical-align: middle"
-          class="article-read-count-icon"
-          src="~/assets/img/eye.png"
-          width="20px"
-          height="20px"
-        />
-        <span>&nbsp;</span>
-        <span class="article-read-count">
-          {{ article.readRecord.readCount }}
-        </span> -->
       </div>
       <p
         class="paragraph"

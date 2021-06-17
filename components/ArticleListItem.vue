@@ -9,6 +9,7 @@
               ? require('~/assets/img/yys.png')
               : article.coverUrl
           "
+          :alt="article.coverUrl == null ? '有意思' : article.title"
         />
         <div class="article-info">
           <div class="article-title">{{ article.title }}</div>

@@ -12,6 +12,7 @@
         <img
           class="illustration"
           :src="article.coverUrl"
+          :alt="article.title"
           v-if="index == illustrationPosition && article.coverUrl !== null"
         />
       </p>

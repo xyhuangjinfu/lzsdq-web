@@ -31,7 +31,7 @@ export default {
       link: [
         {
           rel: "stylesheet",
-          href: require("~/assets/css/pages/article/_id.css"),
+          href: require("~/assets/css/pages/article/_articleId.css"),
         },
       ],
     };
@@ -43,7 +43,7 @@ export default {
   },
   async fetch() {
     this.article = await fetch(
-      "http://www.lzsdq.cn:9999/api/articles/" + this.$route.params.id
+      "http://www.lzsdq.cn:9999/api/articles/" + this.$route.params.articleId
     ).then((res) => res.json());
   },
 };

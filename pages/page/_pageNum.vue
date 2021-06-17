@@ -1,7 +1,7 @@
 <template>
-  <div class="pagination-page">
+  <div class="pagination-page display-flex flex-direction-column">
     <Header />
-    <div class="content">
+    <div class="content flex-1">
       <div class="article-list">
         <ArticleList :pageData="pageData" />
       </div>

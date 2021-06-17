@@ -1,0 +1,36 @@
+.hot-container {
+  width: 100%;
+}
+.hot-content {
+  background-color: white;
+  border-radius: 3px;
+  padding: 20px;
+  box-shadow: 0 0 4px 0 rgb(220, 220, 220);
+}
+.hot-content .hot-label {
+  color: rgb(13, 71, 161);
+  font-size: 1.3em;
+  font-weight: bold;
+}
+.hot-content .hot-article-item {
+  margin-top: 10px;
+}
+.hot-content .hot-number-one {
+  color: rgb(13, 71, 161);
+}
+.hot-content .hot-number-two {
+  color: rgb(21, 101, 192);
+}
+.hot-content .hot-number-three {
+  color: rgb(25, 118, 210);
+}
+.hot-content .hot-number-four {
+  color: rgb(181, 181, 181);
+}
+.hot-content .article-title {
+  color: black;
+}
+.hot-content .article-title:hover {
+  color: rgb(13, 71, 161);
+  text-decoration: none;
+}

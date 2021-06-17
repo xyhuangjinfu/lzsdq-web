@@ -1,0 +1,28 @@
+.article_container {
+  width: 100%;
+}
+.article-container .article_content {
+  border-radius: 3px;
+  padding: 20px;
+  box-shadow: 0 0 4px 0 rgb(220, 220, 220);
+}
+.article-content .article-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+.article-content .article-meta {
+  color: rgb(181, 181, 181);
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  margin-bottom: 50px;
+  margin-top: 10px;
+  font-size: 0.9rem;
+}
+.illustration {
+  width: 100%;
+}
+.paragraph {
+  text-indent: 2em;
+  line-height: 2em;
+}

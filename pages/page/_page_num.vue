@@ -27,7 +27,7 @@ export default {
       link: [
         {
           rel: "stylesheet",
-          href: require("~/assets/css/pages/page/_page.css"),
+          href: require("~/assets/css/pages/page/_page_num.css"),
         },
       ],
     };
@@ -44,7 +44,7 @@ export default {
     };
   },
   async fetch() {
-    var pageNum = this.$route.params.page;
+    var pageNum = this.$route.params.page_num;
     this.pageData = await axios
       .get(
         "http://www.lzsdq.cn:9999/api/articles/?page_size=10&page_num=" +

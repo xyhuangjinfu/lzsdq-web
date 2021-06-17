@@ -5,7 +5,7 @@
 .article-container .article_content {
   border-radius: 3px;
   padding: 20px;
-  box-shadow: 0 4px 8px 0 rgb(220, 220, 220);
+  box-shadow: 0 0 4px 0 rgb(220, 220, 220);
 }
 .article-content .article-title {
   font-size: 2rem;

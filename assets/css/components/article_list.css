@@ -21,7 +21,7 @@
   font-weight: bold;
   text-decoration: none;
   border-radius: 3px;
-  box-shadow: 0 4px 8px 0 rgb(220, 220, 220);
+  box-shadow: 0 0 4px 0 rgb(220, 220, 220);
 }
 .article-list-container .pagination a:hover {
   color: white;
@@ -31,5 +31,5 @@
   font-weight: bold;
   text-decoration: none;
   border-radius: 3px;
-  box-shadow: 0 4px 8px 0 rgb(220, 220, 220);
+  box-shadow: 0 0 4px 0 rgb(220, 220, 220);
 }

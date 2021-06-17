@@ -3,15 +3,14 @@
     <Header />
     <div class="content">
       <div class="article-list">
-        <ArticleList :pageData="pageData"/>
+        <ArticleList :pageData="pageData" />
       </div>
       <div class="side">
         <Hot />
       </div>
     </div>
-    <Footer/>
+    <Footer />
   </div>
-
 </template>
 
 <style>
@@ -22,16 +21,7 @@
 import axios from "axios";
 
 export default {
-   head() {
-    return {
-      link: [
-        {
-          rel: "stylesheet",
-          href: require("~/assets/css/pages/page/_pageNum.css"),
-        },
-      ],
-    };
-  },
+  css: [require("~/assets/css/pages/page/_pageNum.css")],
   data() {
     return {
       pageData: {

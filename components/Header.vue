@@ -16,10 +16,6 @@
 
 <script>
 export default {
-  head() {
-    return {
-      link: [{ rel: "stylesheet", href: require("~/assets/css/components/Header.css") }],
-    };
-  },
+  css: [require("~/assets/css/components/Header.css")],
 };
 </script>

@@ -24,16 +24,7 @@
 import utils from "~/assets/js/utils.js";
 
 export default {
-  head() {
-    return {
-      link: [
-        {
-          rel: "stylesheet",
-          href: require("~/assets/css/components/ArticleList.css"),
-        },
-      ],
-    };
-  },
+  css: [require("~/assets/css/components/ArticleList.css")],
   props: ["pageData"],
   methods: {
     getCreateTime: function (d) {

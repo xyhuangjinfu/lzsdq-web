@@ -15,10 +15,6 @@
 
 <script>
 export default {
-  head() {
-    return {
-      link: [{ rel: "stylesheet", href: require("~/assets/css/components/Footer.css") }],
-    };
-  },
+  css: [require("~/assets/css/components/Footer.css")],
 };
 </script>

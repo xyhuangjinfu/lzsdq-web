@@ -2,9 +2,7 @@
   <div class="article-container">
     <div class="article-content">
       <div class="article-title">{{ article.title }}</div>
-      <div class="article-meta">
-        阅读({{ article.readRecord.readCount }})
-      </div>
+      <div class="article-meta">阅读({{ article.readRecord.readCount }})</div>
       <p
         class="paragraph"
         v-for="(paragraph, index) in article.paragraphs"
@@ -28,16 +26,7 @@
 import utils from "~/assets/js/utils.js";
 
 export default {
-  head() {
-    return {
-      link: [
-        {
-          rel: "stylesheet",
-          href: require("~/assets/css/components/Article.css"),
-        },
-      ],
-    };
-  },
+  css: [require("~/assets/css/components/Article.css")],
   props: ["article"],
   methods: {
     getCreateTime: function (d) {

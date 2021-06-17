@@ -3,7 +3,7 @@
     <Header />
     <div class="content">
       <div class="article">
-        <Article  :article="article"/>
+        <Article :article="article" />
       </div>
       <div class="side">
         <Hot />
@@ -18,6 +18,7 @@
 
 <script>
 export default {
+  css: [require("~/assets/css/pages/article/_articleId.css")],
   head() {
     return {
       title: this.article.title,
@@ -26,12 +27,6 @@ export default {
           hid: "description",
           name: "description",
           content: "Home page description",
-        },
-      ],
-      link: [
-        {
-          rel: "stylesheet",
-          href: require("~/assets/css/pages/article/_articleId.css"),
         },
       ],
     };

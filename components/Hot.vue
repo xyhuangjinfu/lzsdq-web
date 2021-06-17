@@ -29,11 +29,7 @@ import utils from "~/assets/js/utils.js";
 import axios from "axios";
 
 export default {
-  head() {
-    return {
-      link: [{ rel: "stylesheet", href: require("~/assets/css/components/Hot.css") }],
-    };
-  },
+  css: [require("~/assets/css/components/Hot.css")],
   methods: {
     getHotClass: function (index) {
       if (index == 0) {

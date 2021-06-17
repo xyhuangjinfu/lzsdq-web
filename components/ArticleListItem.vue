@@ -1,7 +1,7 @@
 <template>
   <div class="article-list-item-container">
     <a :href="'/article/' + article.id" target="_blank">
-      <div class="article-list-item-content">
+      <div class="article-list-item-content display-flex flex-direction-row">
         <img
           class="article-cover"
           :src="
@@ -11,7 +11,7 @@
           "
           :alt="article.coverUrl == null ? '有意思' : article.title"
         />
-        <div class="article-info">
+        <div class="article-info flex-1">
           <div class="article-title">{{ article.title }}</div>
           <div class="artitle-summary">{{ article.summary }}</div>
           <div class="article-read-count">

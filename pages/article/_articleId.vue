@@ -24,9 +24,8 @@ export default {
       title: this.article.title,
       meta: [
         {
-          hid: "description",
           name: "description",
-          content: "Home page description",
+          content: this.article.title,
         },
       ],
     };

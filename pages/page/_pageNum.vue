@@ -22,6 +22,17 @@ import axios from "axios";
 
 export default {
   css: [require("~/assets/css/pages/page/_pageNum.css")],
+  head() {
+    return {
+      title: "有意思-奇怪的知识增加了",
+      meta: [
+        {
+          name: "description",
+          content: "有意思-奇怪的知识增加了",
+        },
+      ],
+    };
+  },
   data() {
     return {
       pageData: {

@@ -22,7 +22,11 @@
 .illustration {
   width: 100%;
 }
+.paragraph:first-of-type {
+  margin-top: 0;
+}
 .paragraph {
   text-indent: 2em;
   line-height: 2em;
+  margin-top: 1rem;
 }

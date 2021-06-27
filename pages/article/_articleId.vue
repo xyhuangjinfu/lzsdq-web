@@ -41,7 +41,7 @@ export default {
   },
   async fetch() {
     this.article = await fetch(
-      "http://www.lzsdq.cn:9999/api/articles/" + this.$route.params.articleId
+      "http://" + process.env.API_DOMAIN + ":9999/api/articles/" + this.$route.params.articleId
     ).then((res) => res.json());
   },
 };

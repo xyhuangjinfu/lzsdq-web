@@ -52,7 +52,7 @@ export default {
     var pageNum = this.$route.params.pageNum;
     this.pageData = await axios
       .get(
-        "http://www.lzsdq.cn:9999/api/articles/?page_size=10&page_num=" +
+        "http://" + process.env.API_DOMAIN + ":9999/api/articles/?page_size=10&page_num=" +
           pageNum
       )
       .then((resp) => {

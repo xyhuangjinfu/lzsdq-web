@@ -18,7 +18,7 @@ export default {
   env: {
     NUXTJS_HOST: process.env.NUXTJS_HOST,
     NUXTJS_PORT: process.env.NUXTJS_PORT,
-    API_DOMAIN: process.env.API_DOMAIN,
+    API_URL: process.env.API_DOMAIN,
   },
 
   target: 'server',

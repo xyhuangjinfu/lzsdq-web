@@ -2,7 +2,7 @@
   <div class="article-container">
     <div class="article-content">
       <div class="article-title">{{ article.title }}</div>
-      <div class="article-meta">阅读({{ article.readRecord.readCount }})</div>
+      <div class="article-meta">阅读({{ article.readCount }})&nbsp;&nbsp;&nbsp;点赞({{ article.voteCount }})</div>
       <p
         class="paragraph"
         v-for="(paragraph, index) in article.paragraphs"

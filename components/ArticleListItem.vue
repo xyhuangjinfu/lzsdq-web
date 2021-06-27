@@ -15,7 +15,7 @@
           <div class="article-title">{{ article.title }}</div>
           <div class="artitle-summary">{{ article.summary }}</div>
           <div class="article-read-count">
-            阅读({{ article.readRecord.readCount }})
+            阅读({{ article.readCount }})&nbsp;&nbsp;&nbsp;点赞({{ article.voteCount }})
           </div>
         </div>
       </div>

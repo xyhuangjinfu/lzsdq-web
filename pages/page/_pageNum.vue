@@ -24,7 +24,8 @@ export default {
   css: [require("~/assets/css/pages/page/_pageNum.css")],
   head() {
     return {
-      title: "有意思-奇怪的知识增加了",
+      // title: "有意思-奇怪的知识增加了",
+      title: "lzsdq.cn",
       meta: [
         {
           name: "description",

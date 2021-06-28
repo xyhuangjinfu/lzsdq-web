@@ -1,7 +1,7 @@
-.article_container {
+.article-container {
   width: 100%;
 }
-.article-container .article_content {
+.article-container .article-content {
   border-radius: 3px;
   padding: 20px;
   box-shadow: 0 0 4px 0 rgb(220, 220, 220);

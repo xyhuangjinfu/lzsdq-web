@@ -17,6 +17,9 @@
         />
       </p>
     </div>
+    <div class="article-operate">
+      <button class="vote">点赞</button>
+    </div>
   </div>
 </template>
 

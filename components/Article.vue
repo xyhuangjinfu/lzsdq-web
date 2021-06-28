@@ -57,6 +57,7 @@ export default {
       axios.post(url, data).then(
         (res) => {
           toast.toast("点赞成功");
+          this.article.voteCount++;
         },
         (error) => {
           toast.toast("点赞失败");

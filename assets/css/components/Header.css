@@ -1,0 +1,48 @@
+@import url("~/assets/css/common.css");
+
+.header-container{
+  background-color: white;
+  padding: 0.5rem 0.5rem;
+  border-bottom: 0.1rem solid rgb(13, 71, 161);
+}
+
+.header-content {
+  margin: 0 auto;
+}
+
+.header-container .title .main-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: rgb(13, 71, 161);
+}
+
+.header-container .title .sub-title {
+  font-size: 0.9rem;
+  color: rgb(21, 101, 192);
+}
+
+/* 中屏 横屏 */
+@media screen and (min-width:960px) and (orientation : landscape) {
+  .header-content{
+    width: 900px;
+  } 
+}
+/* 宽屏 横屏 */
+@media screen and (min-width:1200px) and (orientation : landscape) {
+  .header-content{
+    width: 1000px;
+  } 
+}
+/* 超宽屏 横屏 */
+@media screen and (min-width:1600px) and (orientation : landscape) {
+  .header-content{
+    width: 1400px;
+  } 
+}
+/* 窄屏 */
+/* 竖屏 */
+@media screen and (orientation : portrait), screen and (max-width:959px) and (orientation : landscape) {
+  .header-content{
+    width: auto;
+  } 
+}

@@ -2,7 +2,11 @@
   <div class="article-container">
     <div class="article-content">
       <div class="article-title">{{ article.title }}</div>
-      <div class="article-meta">阅读({{ article.readCount }})&nbsp;&nbsp;&nbsp;点赞({{ article.voteCount }})</div>
+      <div class="article-meta">
+        阅读({{ article.readCount }})&nbsp;&nbsp;&nbsp;点赞({{
+          article.voteCount
+        }})
+      </div>
       <p
         class="paragraph"
         v-for="(paragraph, index) in article.paragraphs"
@@ -18,7 +22,7 @@
       </p>
     </div>
     <div class="article-operate">
-      <button class="vote">点赞</button>
+      <button class="vote" @click="vote">点赞</button>
     </div>
   </div>
 </template>
@@ -27,7 +31,9 @@
 </style>
 
 <script>
+import axios from "axios";
 import utils from "~/assets/js/utils.js";
+import toast from "~/assets/js/toast.js";
 
 export default {
   css: [require("~/assets/css/components/Article.css")],
@@ -44,6 +50,18 @@ export default {
         // return Math.round(Math.random() * (paragraphCount - 2));
         return 1;
       }
+    },
+    vote: function () {
+      let data = { id: this.article.id };
+      var url = "http://" + process.env.API_DOMAIN + ":9999/api/articles/vote";
+      axios.post(url, data).then(
+        (res) => {
+          toast.toast("点赞成功");
+        },
+        (error) => {
+          toast.toast("点赞失败");
+        }
+      );
     },
   },
   data() {

@@ -2,6 +2,8 @@
     <div class="page display_flex flex-direction_column">
     <div class="header">header</div>
     <div class="flex_1">
+      <div>apiUrl: {{ apiUrl }}</div>
+      <div>apiDomain: {{ apiDomain }}</div>
       <ul>
         <li>aaaaaaaaaa</li>
         <li>aaaaaaaaaa</li>
@@ -193,4 +195,12 @@ ul, li{
 
 
 <script>
+export default {
+   data() {
+    return {
+      apiUrl : process.env.API_URL,
+      apiDomain : process.env.API_DOMAIN,
+    };
+  },
+}
 </script>

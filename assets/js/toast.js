@@ -1,25 +1,3 @@
-// function toast(msg) {
-//   var toastDiv = document.createElement("div");
-//   var msgDiv = document.createElement("div");
-//   msgDiv.appendChild(document.createTextNode(msg));
-//   toastDiv.appendChild(msgDiv);
-
-//   toastDiv.setAttribute('class', 'toast');
-//   toastDiv.setAttribute('style', 'background-color: red; width: 10rem; height: 3rem; position: fixed; top: 50%; bottom: 50%; left: 50%; right: 50%; padding: 1rem auto;');
-//   msgDiv.setAttribute('class', 'msg');
-//   msgDiv.setAttribute('style', 'background-color: blue;');
-
-//   var body = document.getElementById("__nuxt");
-//   body.appendChild(toastDiv);
-
-//   // div.fadeIn();
-
-//   // setTimeout(function () {
-//   //   body.removeChild(toastDiv);
-//   // }, 2000);
-// }
-
-
 function toast(msg) {
   var body = document.body;
   var divToastPop = document.createElement("div");

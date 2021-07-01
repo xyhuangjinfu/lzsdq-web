@@ -24,8 +24,7 @@ export default {
   css: [require("~/assets/css/pages/page/_pageNum.css")],
   head() {
     return {
-      // title: "有意思-奇怪的知识增加了",
-      title: "lzsdq.cn",
+      title: "有意思-奇怪的知识增加了",
       meta: [
         {
           name: "description",
@@ -53,7 +52,9 @@ export default {
     var pageNum = this.$route.params.pageNum;
     this.pageData = await axios
       .get(
-        "http://" + process.env.API_DOMAIN + ":9999/api/articles/?page_size=10&page_num=" +
+        "http://" +
+          process.env.API_DOMAIN +
+          ":9999/api/articles/?page_size=10&page_num=" +
           pageNum
       )
       .then((resp) => {

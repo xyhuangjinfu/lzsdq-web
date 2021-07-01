@@ -9,3 +9,8 @@
   color: white;
   font-size: 0.8em;
 }
+
+.footer-container a {
+  color: white;
+  text-decoration: none;
+}

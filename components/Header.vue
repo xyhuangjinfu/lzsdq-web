@@ -15,15 +15,6 @@
 </style>
 
 <script>
-
-var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "https://hm.baidu.com/hm.js?9373c65fc05cd18fe9de523759a6c66d";
-  var s = document.getElementsByTagName("script")[0]; 
-  s.parentNode.insertBefore(hm, s);
-})();
-
 export default {
   css: [require("~/assets/css/components/Header.css")],
 };

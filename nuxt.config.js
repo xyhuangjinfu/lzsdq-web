@@ -27,10 +27,10 @@ export default {
   target: 'server',
 
   server: {
-    https: {
-      key: process.env.SSL_KEY,
-      ca: process.env.SSL_PEM,
-    },
+    // https: {
+    //   key: process.env.SSL_KEY,
+    //   ca: process.env.SSL_PEM,
+    // },
     port: process.env.NUXTJS_PORT, // default: 3000
     host: process.env.NUXTJS_HOST, // default: localhost,
     timing: false

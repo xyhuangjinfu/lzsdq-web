@@ -30,10 +30,10 @@ export default {
   target: 'server',
 
   server: {
-    // https: {
-    //   key: fs.readFileSync(path.resolve(__dirname, '../../ssl/5890747_www.lzsdq.cn.key')),
-    //   ca: fs.readFileSync(path.resolve(__dirname, '../../ssl/5890747_www.lzsdq.cn.pem')),
-    // },
+    https: {
+      key: fs.readFileSync('/root/lzsdq/ssl/5890747_www.lzsdq.cn.key'),
+      ca: fs.readFileSync('/root/lzsdq/ssl/5890747_www.lzsdq.cn.pem'),
+    },
     port: process.env.NUXTJS_PORT, // default: 3000
     host: process.env.NUXTJS_HOST, // default: localhost,
     timing: false
@@ -62,5 +62,10 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+    extend(config,ctx){
+      　　config.node = {
+      　　　　fs:"empty"
+      　　}
+      }
   }
 }

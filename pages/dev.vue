@@ -4,6 +4,8 @@
     <div class="flex_1">
       <div>apiUrl: {{ apiUrl }}</div>
       <div>apiDomain: {{ apiDomain }}</div>
+      <div>sslKey: {{ sslKey }}</div>
+      <div>sslPem: {{ sslPem }}</div>
       <ul>
         <li>aaaaaaaaaa</li>
         <li>aaaaaaaaaa</li>
@@ -200,6 +202,8 @@ export default {
     return {
       apiUrl : process.env.API_URL,
       apiDomain : process.env.API_DOMAIN,
+      sslKey : process.env.SSL_KEY,
+      sslPem : process.env.SSL_PEM,
     };
   },
 }

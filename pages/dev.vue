@@ -197,13 +197,16 @@ ul, li{
 
 
 <script>
+import path from 'path'
+import fs from 'fs'
+
 export default {
    data() {
     return {
       apiUrl : process.env.API_URL,
       apiDomain : process.env.API_DOMAIN,
-      sslKey : process.env.SSL_KEY,
-      sslPem : process.env.SSL_PEM,
+      sslKey : path.resolve(__dirname, '../../ssl/5890747_www.lzsdq.cn.key'),
+      sslPem : path.resolve(__dirname, '../../ssl/5890747_www.lzsdq.cn.pem'),
     };
   },
 }

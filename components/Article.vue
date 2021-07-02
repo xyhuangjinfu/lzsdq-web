@@ -53,7 +53,7 @@ export default {
     },
     vote: function () {
       let data = { id: this.article.id };
-      var url = "http://" + process.env.API_DOMAIN + ":9999/api/articles/vote";
+      var url = "https://" + process.env.API_DOMAIN + "/api/articles/vote";
       axios.post(url, data).then(
         (res) => {
           toast.toast("点赞成功");

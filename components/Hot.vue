@@ -47,7 +47,7 @@ export default {
     },
     getAndSetHot: async function () {
       this.articles = await axios
-        .get("http://" + process.env.API_DOMAIN + ":9999/api/articles/hot?limit=10")
+        .get("https://" + process.env.API_DOMAIN + "/api/articles/hot?limit=10")
         .then((res) => {
           return res.data;
         });

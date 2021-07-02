@@ -32,7 +32,7 @@ export default {
   server: {
     https: {
       key: fs.readFileSync('/root/lzsdq/ssl/5890747_www.lzsdq.cn.key'),
-      ca: fs.readFileSync('/root/lzsdq/ssl/5890747_www.lzsdq.cn.pem'),
+      cert: fs.readFileSync('/root/lzsdq/ssl/5890747_www.lzsdq.cn.pem'),
     },
     port: process.env.NUXTJS_PORT, // default: 3000
     host: process.env.NUXTJS_HOST, // default: localhost,

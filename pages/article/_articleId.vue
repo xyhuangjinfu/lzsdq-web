@@ -38,11 +38,13 @@ export default {
   },
   data() {
     return {
-      article: {},
+      article: {
+        paragraphs: [],
+      },
     };
   },
   async fetch() {
-    this.article = await axios
+    var result = await axios
       .get(
         "https://" +
           process.env.API_DOMAIN +
@@ -57,6 +59,15 @@ export default {
           return null;
         }
       );
+
+    if (result == null) {
+      this.$nuxt.context.error({
+        statusCode: 404,
+        message: "Article Not Found",
+      });
+    } else {
+      this.article = result;
+    }
   },
 };
 </script>

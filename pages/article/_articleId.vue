@@ -17,6 +17,8 @@
 </style>
 
 <script>
+import axios from "axios";
+
 export default {
   css: [require("~/assets/css/pages/article/_articleId.css")],
   head() {
@@ -40,9 +42,21 @@ export default {
     };
   },
   async fetch() {
-    this.article = await fetch(
-      "https://" + process.env.API_DOMAIN + "/api/articles/" + this.$route.params.articleId
-    ).then((res) => res.json());
+    this.article = await axios
+      .get(
+        "https://" +
+          process.env.API_DOMAIN +
+          "/api/articles/" +
+          this.$route.params.articleId
+      )
+      .then(
+        (resp) => {
+          return resp.data;
+        },
+        (error) => {
+          return null;
+        }
+      );
   },
 };
 </script>

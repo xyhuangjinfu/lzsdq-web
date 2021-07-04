@@ -36,6 +36,16 @@ export default {
       ],
     };
   },
+  methods: {
+    read: function () {
+      let data = { id: this.article.id };
+      var url = "https://" + process.env.API_DOMAIN + "/api/articles/read";
+      axios.post(url, data).then(
+        (res) => {},
+        (error) => {}
+      );
+    },
+  },
   data() {
     return {
       article: {
@@ -68,6 +78,8 @@ export default {
     } else {
       this.article = result;
     }
+
+    this.read();
   },
 };
 </script>

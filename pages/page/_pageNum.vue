@@ -50,22 +50,36 @@ export default {
   },
   async fetch() {
     var pageNum = this.$route.params.pageNum;
-    this.pageData = await axios
+    var result = await axios
       .get(
         "https://" +
           process.env.API_DOMAIN +
           "/api/articles/?page_size=10&page_num=" +
           pageNum
       )
-      .then((resp) => {
-        return {
-          page: resp.data.page,
-          totalPage: resp.data.totalPage,
-          articles: resp.data.data,
-          preUrl: "/page/" + (parseInt(pageNum) - 1),
-          nextUrl: "/page/" + (parseInt(pageNum) + 1),
-        };
+      .then(
+        (resp) => {
+          return {
+            page: resp.data.page,
+            totalPage: resp.data.totalPage,
+            articles: resp.data.data,
+            preUrl: "/page/" + (parseInt(pageNum) - 1),
+            nextUrl: "/page/" + (parseInt(pageNum) + 1),
+          };
+        },
+        (error) => {
+          return null;
+        }
+      );
+
+    if (result == null || result.articles.length == 0) {
+      this.$nuxt.context.error({
+        statusCode: 404,
+        message: "Page Not Found",
       });
+    } else {
+      this.pageData = result;
+    }
   },
 };
 </script>

@@ -8,8 +8,8 @@
       <ArticleListItem :article="article" />
     </div>
     <div class="pagination">
-      <a :href="pageData.preUrl" v-show="pageData.page > 1">上一页</a>
-      <a :href="pageData.nextUrl" v-show="pageData.page < pageData.totalPage"
+      <a :href="pageData.preUrl" v-if="pageData.page > 1">上一页</a>
+      <a :href="pageData.nextUrl" v-if="pageData.page < pageData.totalPage"
         >下一页</a
       >
     </div>

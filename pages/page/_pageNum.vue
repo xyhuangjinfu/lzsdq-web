@@ -75,7 +75,7 @@ export default {
     if (result == null || result.articles.length == 0) {
       this.$nuxt.context.error({
         statusCode: 404,
-        message: "Page Not Found",
+        message: "页面不存在",
       });
     } else {
       this.pageData = result;

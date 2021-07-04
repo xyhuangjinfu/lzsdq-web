@@ -63,7 +63,7 @@ export default {
     if (result == null) {
       this.$nuxt.context.error({
         statusCode: 404,
-        message: "Article Not Found",
+        message: "页面不存在",
       });
     } else {
       this.article = result;

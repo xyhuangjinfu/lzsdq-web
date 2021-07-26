@@ -6,7 +6,7 @@
   padding: 20px;
   box-shadow: 0 0 4px 0 rgb(220, 220, 220);
 }
-.article-content .article-title {
+.article-content .article-title h1 {
   font-size: 1.8rem;
   font-weight: bold;
 }

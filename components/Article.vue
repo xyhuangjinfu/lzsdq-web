@@ -1,7 +1,9 @@
 <template>
   <div class="article-container">
     <div class="article-content">
-      <div class="article-title">{{ article.title }}</div>
+      <div class="article-title">
+        <h1>{{ article.title }}</h1>
+      </div>
       <div class="article-meta">
         阅读({{ article.readCount }})&nbsp;&nbsp;&nbsp;点赞({{
           article.voteCount

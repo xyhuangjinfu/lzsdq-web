@@ -24,15 +24,15 @@ export default {
   css: [require("~/assets/css/pages/page/_pageNum.css")],
   head() {
     return {
-      title: "有意思-奇怪的知识增加了",
+      title: "有意思-奇怪的知识增加了_全面的科普知识网站",
       meta: [
         {
           name: "description",
-          content: "有意思-奇怪的知识增加了",
+          content: "有意思-奇怪的知识增加了_全面的科普知识网站",
         },
         {
           name: "keywords",
-          content: "有意思-奇怪的知识增加了",
+          content: "有意思-奇怪的知识增加了_全面的科普知识网站",
         },
       ],
     };

@@ -23,7 +23,7 @@ export default {
   css: [require("~/assets/css/pages/article/_articleId.css")],
   head() {
     return {
-      title: this.article.title,
+      title: this.article.title + "_有意思",
       meta: [
         {
           name: "description",
